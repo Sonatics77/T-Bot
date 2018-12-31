@@ -13,3 +13,5 @@ module.exports.run = async (Bot, message, args) => {
 module.exports.help = {
   name: "embed"
 }
+
+//splits args by " ", first arg is colour (match to hexa) join other args with " "
