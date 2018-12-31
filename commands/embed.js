@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (Bot, message, args) => {
-  let embedText = message.content.slice(1);
+  let embedText = message.content.slice(7);
   let responseEmbed = new Discord.RichEmbed()
   .setDescription(embedText)
 
