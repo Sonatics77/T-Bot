@@ -4,6 +4,7 @@ module.exports.run = async (Bot, message, args) => {
   let embedText = message.content.slice(7);
   let responseEmbed = new Discord.RichEmbed()
   .setDescription(embedText)
+  .setColor("#42f4b3");
 
   return message.channel.send(responseEmbed);
 
