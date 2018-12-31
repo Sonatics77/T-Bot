@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 
 module.exports.run = async (Bot, message, args) => {
   let cmdargs = message.content.slice(Prefix.length).trim().split(" ");
-  let args = cmdargs.splice(0,1);
-  let chosen = args[Math.floor(Math.random() * args.length)]
+  let argus = cmdargs.splice(0,1);
+  let chosen = argus[Math.floor(Math.random() * args.length)]
   return.message.channel.send(rand);
 }
 
