@@ -1,4 +1,4 @@
-const Discord = require()"discord.js");
+const Discord = require("discord.js");
 
 module.exports.run = async (Bot, message, args) => {
   let cmdargs = message.content.slice(Prefix.length).trim().split(" ");
