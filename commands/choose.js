@@ -1,9 +1,10 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (Bot, message, args) => {
-  let cmdargs = message.content.slice(1).trim().split(" ");
-  let argus = cmdargs.splice(0,1);
-  let chosen = cmdargs[Math.floor(Math.random() * args.length)]
+  let cmdargs1 = message.content.slice(1).trim().split(",");
+  let argus = cmdargs1.splice(0,1);
+  let cmdargs2 = cmdargs1.split(" or ");
+  let chosen = cmdargs1[Math.floor(Math.random() * cmdargs1.length)]
   return message.channel.send(chosen);
 }
 
