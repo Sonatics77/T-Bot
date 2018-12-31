@@ -7,3 +7,7 @@ module.exports.run = async (Bot, message, args) => {
 
   return message.channel.send(embedTime);
 }
+
+module.exports.help = {
+  name: "time"
+}
