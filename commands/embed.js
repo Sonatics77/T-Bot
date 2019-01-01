@@ -6,11 +6,19 @@ module.exports.run = async (Bot, message, args) => {
     let emText = message.content.slice(7).split(" ");
     let emColour = `${emText.splice(0,2)}`;
     let eColour = `${emColour.slice(1)}`;
+    let hexcheck = eColour.slice(0,0);
     let colourPos = colourName.indexOf(eColour);
-    let eText = emText.join(" ");
+    var eText = emText.join(" ");
     var eHex = 0
     if (colourPos == -1) {
-      eHex = eColour;
+      if (hexcheck == "#") {
+        eHex = eColour;
+      } else {
+        eHex = ""
+        let embText = [eColour,eText];
+        eText = embText.join(" ");
+      }
+
     } else {
       eHex = colourHex[colourPos];
     };
