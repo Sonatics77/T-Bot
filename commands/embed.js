@@ -3,9 +3,8 @@ const Discord = require("discord.js");
 module.exports.run = async (Bot, message, args) => {
     let colourName = ["red", "orange", "yellow", "green", "blue", "purple", "black", "white"];
     let colourHex = ["#ff0000", "#ff6100", "#ffdd00", "#19ff00", "#0087ff", "#9400ff", "#000000", "#ffffff"];
-    let embedText = message.content.slice(7);
-    let embedArgs = embedText.split("|");
-    let embedColour = embedArgs[1];
+    let embedText = message.content.slice(7).split("|");
+    let embedColour = embedText[1];
     let colourPos = colourName.indexOf(embedColour);
     let embedHex = colourHex[colourPos];
 
@@ -15,7 +14,7 @@ module.exports.run = async (Bot, message, args) => {
 
     message.channel.send(embedColour);
     message.channel.send(colourPos);
-    message.channel.send(embedArgs);
+    message.channel.send(embedText);
 
 
   return message.channel.send(embedHex);
