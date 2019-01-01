@@ -4,9 +4,8 @@ module.exports.run = async (Bot, message, args) => {
     let colourName = ["red", "orange", "yellow", "green", "blue", "purple", "black", "white"];
     let colourHex = ["#ff0000", "#ff6100", "#ffdd00", "#19ff00", "#0087ff", "#9400ff", "#000000", "#ffffff"];
     let eText = message.content.slice(7).split(" ");
-    let emColour = `"${eText.splice(0,2)}"`;
-    let embColour = `"${emColour.slice(2)}`;
-    let eColour = embColour.toString();
+    let emColour = `${eText.splice(0,2)}`;
+    let eColour = `${emColour.slice(1)}`;
     let colourPos = colourName.indexOf(eColour);
     let eHex = colourHex[colourPos];
 
@@ -16,7 +15,7 @@ module.exports.run = async (Bot, message, args) => {
 
     message.channel.send(eColour);
     message.channel.send(colourPos);
-    message.channel.send(embedText);
+    message.channel.send(eText);
 
 
   return message.channel.send(embedHex);
