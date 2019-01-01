@@ -7,7 +7,7 @@ module.exports.run = async (Bot, message, args) => {
     let emColour = `${eText.splice(0,2)}`;
     let eColour = `${emColour.slice(1)}`;
     let colourPos = colourName.indexOf(eColour);
-    if colourPos = -1 {
+    if colourPos === -1 {
       let eHex = eColour;
     } else {
       let eHex = colourHex[colourPos];
