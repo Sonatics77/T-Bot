@@ -7,7 +7,12 @@ module.exports.run = async (Bot, message, args) => {
     let emColour = `${eText.splice(0,2)}`;
     let eColour = `${emColour.slice(1)}`;
     let colourPos = colourName.indexOf(eColour);
-    let eHex = colourHex[colourPos];
+    if colourPos = -1 {
+      let eHex = eColour;
+    } else {
+      let eHex = colourHex[colourPos];
+    };
+
 
     let responseEmbed = new Discord.RichEmbed()
     .setDescription(eText)
