@@ -13,12 +13,7 @@ module.exports.run = async (Bot, message, args) => {
     .setDescription(eText)
     .setColor(eHex);
 
-    message.channel.send(eColour);
-    message.channel.send(colourPos);
-    message.channel.send(eText);
-
-
-  return message.channel.send(embedHex);
+  return message.channel.send(responseEmbed);
 
 }
 
