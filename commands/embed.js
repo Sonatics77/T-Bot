@@ -5,7 +5,7 @@ module.exports.run = async (Bot, message, args) => {
     let colourHex = ["#ff0000", "#ff6100", "#ffdd00", "#19ff00", "#0087ff", "#9400ff", "#000000", "#ffffff"];
     let eText = message.content.slice(7).split(" ");
     let emColour = `"${eText.splice(0,2)}"`;
-    let eColour = emColour.slice(1);
+    let eColour = `"${emColour.slice(2)}`;
     let colourPos = colourName.indexOf(eColour);
     let eHex = colourHex[colourPos];
 
