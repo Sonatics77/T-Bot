@@ -15,6 +15,7 @@ module.exports.run = async (Bot, message, args) => {
 
     message.channel.send(embedColour);
     message.channel.send(colourPos);
+    message.channel.send(colourSyn.join());
     message.channel.send(embedText);
 
 
