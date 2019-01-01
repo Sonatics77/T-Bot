@@ -5,8 +5,7 @@ module.exports.run = async (Bot, message, args) => {
     let colourHex = ["#ff0000", "#ff6100", "#ffdd00", "#19ff00", "#0087ff", "#9400ff", "#000000", "#ffffff"];
     let embedText = message.content.slice(7).split(" ");
     let embedColour = embedText.splice(0,2);
-    let colourSyn = ['"',embedColour,'"']
-    let colourPos = colourName.indexOf(colourSyn.join());
+    let colourPos = colourName.indexOf(string(embedColour));
     let embedHex = colourHex[colourPos];
 
     let responseEmbed = new Discord.RichEmbed()
@@ -15,7 +14,6 @@ module.exports.run = async (Bot, message, args) => {
 
     message.channel.send(embedColour);
     message.channel.send(colourPos);
-    message.channel.send(colourSyn.join());
     message.channel.send(embedText);
 
 
