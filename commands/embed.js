@@ -6,7 +6,7 @@ module.exports.run = async (Bot, message, args) => {
     let embedText = message.content.slice(7).split(" ");
     let embedColour = embedText.splice(0,2);
     let asfgs = ["\"",embedColour,"\""];
-    let colourPos = colourName.indexOf(asfgs);
+    let colourPos = colourName.indexOf(asfgs.join());
     let embedHex = colourHex[colourPos];
 
     let responseEmbed = new Discord.RichEmbed()
