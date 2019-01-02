@@ -1,16 +1,16 @@
 const Discord = require("discord.js");
 const snekfetch = require("snekfetch");
-const api = "http://aws.random.cat/meow"
+const api = "https://random.dog/woof.json"
 
 module.exports.run = async (Bot, message, args) => {
   snekfetch.get(api).then(r => {
-    let catbody = r.body
-    let fullcat = ["**Cat** ***uwu***", catbody];
+    let dogbody = r.body
+    let fulldog = ["**Doggo** ***:3***", dogbody];
 
-    message.channel.send(fullcat);
+    message.channel.send(fulldog);
   })
 }
 
 module.exports.help = {
-  name: "cat"
+  name: "doggo"
 }
