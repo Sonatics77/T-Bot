@@ -6,7 +6,9 @@ module.exports.run = async (Bot, message, args) => {
   let anChannel = `${aArgs.splice(0,2)}`;
   let annChannel = `${anChannel.slice(2)}`;
   let aChannel = `${annChannel.slice(1,annChannel.length -1)}`;
-  let aText = aArgs.join(" ");
+  var aText = aArgs.join(" ");
+  let anText = [`${message.author}: `, aText];
+  aText = anText.join("");
   let sendChannel = message.guild.channels.find(channel => channel.id == aChannel);
 
   sendChannel.send(aText);
