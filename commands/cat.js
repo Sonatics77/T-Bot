@@ -7,12 +7,8 @@ module.exports.run = async (Bot, message, args) => {
   snekfetch.get(api).then(r => {
     let catbody = r.body
 
-    let catembed = new Discord.RichEmbed()
-    .setColor(randomColor)
-    .setTitle("Cat uwu")
-    .setDescription(catbody);
-
-    message.channel.send(catembed);
+    message.channel.send("**Cat** ***uwu***")
+    message.channel.send(catbody);
   })
 }
 
