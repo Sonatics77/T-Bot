@@ -6,7 +6,7 @@ module.exports.run = async (Bot, message, args) => {
   message.channel.send(vChannel);
 //  vChannel.join().then(connection => {
   //  message.channel.send(`Succesfully joined ${vChannel}`);
-  })
+
 }
 
 module.exports.help = {
