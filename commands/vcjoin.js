@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const Ffmpeg = require("ffmpeg");
+const Ffmpeg = require("ffmpeg.js");
 
 module.exports.run = async (Bot, message, args) => {
   let vArgs = message.content.slice(7).trim();
