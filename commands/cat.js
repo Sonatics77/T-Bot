@@ -8,7 +8,7 @@ module.exports.run = async (Bot, message, args) => {
   var randomColour = Math.floor(Math.random()*16777215).toString(16);
 
   let catembed = new Discord.RichEmbed()
-  .setColour(randomColour)
+  .setColor(randomColour)
   .setTitle("Cat uwu")
   .setImage(body.url);
 
