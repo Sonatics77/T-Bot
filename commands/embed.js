@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (Bot, message, args) => {
     let colourName = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "black", "white"];
     let colourHex = ["#ff0000", "#ff6100", "#ffdd00", "#19ff00", "#0087ff", "#9400ff", "#fc00a8", "#000000", "#ffffff"];
+    let embedAuth = message.author;
     let emText = message.content.slice(7).split(" ");
     let emColour = `${emText.splice(0,2)}`;
     let eColour = `${emColour.slice(1)}`;
@@ -23,6 +24,9 @@ module.exports.run = async (Bot, message, args) => {
       eHex = colourHex[colourPos];
     };
 
+    let authText = [embedAuth,": ",eText];
+    eText = authText.join("");
+    message.delete();
 
     let responseEmbed = new Discord.RichEmbed()
     .setDescription(eText)
