@@ -3,8 +3,9 @@ const Ffmpeg = require("ffmpeg");
 
 module.exports.run = async (Bot, message, args) => {
   let vChannel = message.member.voiceChannel;
-  vChannel.join().then(connection => {
-    message.channel.send(`Succesfully joined ${vChannel}`);
+  message.channel.send(vChannel);
+//  vChannel.join().then(connection => {
+  //  message.channel.send(`Succesfully joined ${vChannel}`);
   })
 }
 
