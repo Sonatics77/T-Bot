@@ -2,8 +2,10 @@ const Discord = require("discord.js");
 const Ffmpeg = require("ffmpeg");
 
 module.exports.run = async (Bot, message, args) => {
-  let vChannel = message.author.voiceChannel;
-  message.channel.send(message.author.voiceChannel);
+  let vArgs = message.content.slice(7).trim();
+  message.channel.send(vArgs);
+  let vChannel = message.guild.channels.find(channel => channel.name == vArgs);
+//  let vChannel = message.author.voiceChannel;
   vChannel.join().then(connection => {
     message.channel.send(`Successfully joined ${vChannel}`);
   });
