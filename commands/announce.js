@@ -10,7 +10,6 @@ module.exports.run = async (Bot, message, args) => {
 
   message.channel.send(aChannel);
   message.channel.send(aText);
-  message.channel.send(sendChannel)
 
 }
 
