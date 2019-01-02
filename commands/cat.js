@@ -5,9 +5,9 @@ const api = "http://aws.random.cat/meow"
 module.exports.run = async (Bot, message, args) => {
   snekfetch.get(api).then(r => {
     let catbody = r.body
-    let fullcat = ["**Cat** ***uwu***", catbody];
-
-    message.channel.send(fullcat);
+    
+    message.channel.send("**Cat** ***uwu***");
+    message.channel.send(catbody);
   })
 }
 
