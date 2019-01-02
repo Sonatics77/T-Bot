@@ -7,7 +7,9 @@ module.exports.run = async (Bot, message, args) => {
   let aText = aArgs.join(" ");
   let sendChannel = message.guild.channels.find(channel => channel.name === aChannel);
 
-  sendChannel.send(aText);
+  message.channel.send(aChannel);
+  message.channel.send(aText);
+  message.channel.send(sendChannel)
 
 }
 
