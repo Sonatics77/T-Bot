@@ -5,7 +5,7 @@ module.exports.run = async (Bot, message, args) => {
   if(! message.member.hasPermission("MENTION_EVERYONE")) return message.channel.send("You do not have the required permissions to use this command");
   let anChannel = `${aArgs.splice(0,2)}`;
   let annChannel = `${anChannel.slice(2)}`;
-  let aChannel = `${annChannel.slice(0,annChannel.length -1)}`;
+  let aChannel = `${annChannel.slice(1,annChannel.length -1)}`;
   let aText = aArgs.join(" ");
   let sendChannel = message.guild.channels.find(channel => channel.id == aChannel);
 
