@@ -15,11 +15,10 @@ module.exports.run = async (Bot, message, args) => {
     if(! msgs){
       return message.channel.send("Send a valid response");
     } else {
-      message.channel.send(`${msgs.map(msg => msg.content)}`);
+      d_msg.delete();
       var awaitR = `${msgs.map(msg => msg.content)}`
       msgs.deleteAll();
       var hletter = awaitR.slice(3).trim();
-      message.channel.send(hletter);
       if (hword.includes(hletter)){
         var indices = [];
         for(var i2=0; i2<hword.length;i2++) {
@@ -28,7 +27,7 @@ module.exports.run = async (Bot, message, args) => {
         for(var i3=0; i3<indices.length; i3++) {
           hsword[indices[i3]] = hletter;
         }
-        message.channel.send(hsword.join(" "));
+        message.channel.send(hsword.join(" ")).then(d_msg);
       }
     }
   }
