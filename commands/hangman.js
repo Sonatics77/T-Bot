@@ -13,13 +13,19 @@ module.exports.run = async (Bot, message, args) => {
   message.channel.send(hsword.join(" "));
 
   while(hsword.includes("██")){
-    const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
+    let hEmbed = new Discord.RichEmbed()
+    .setTitle("Test")
+    .addField("unknown", `${hsword.join(" ")}`)
+    .addField("used", `${uletters.join("")}`);
+
+    message.channel.send(hEmbed).then(d_msg => {dmsg = d_msg.id});
+    const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {time: 30000});
     if(! msgs){
       return message.channel.send("Send a valid response");
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
       msgs.deleteAll();
-      message.delete();
+      dmsg.delete();
       var hletter = awaitR.slice(3).trim();
       if (hword.includes(hletter)){
         var indices = [];
@@ -30,12 +36,7 @@ module.exports.run = async (Bot, message, args) => {
         for(var i3=0; i3<indices.length; i3++) {
           hsword[indices[i3]] = hletter;
         }
-        let hEmbed = new Discord.RichEmbed()
-        .setTitle("Test")
-        .addField("unknown", `${hsword.join(" ")}`)
-        .addField("used", `${uletters.join("")}`);
 
-        message.channel.send(hEmbed)//.then(d_msg => {});
       }
     }
   }
