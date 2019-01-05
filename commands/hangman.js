@@ -10,8 +10,12 @@ module.exports.run = async (Bot, message, args) => {
   for (var i = 0; i < hword.length; i++) {
     hsword.push("██");
   }
-  message.channel.send(hsword.join(" "));
+  let phEmbed = new Discord.RichEmbed()
+  .setTitle("Test")
+  .addField("unknown", `${hsword.join(" ")}`)
+  .addField("used", `${uletters.join("")}`);
 
+  message.channel.send(phEmbed);
   while(hsword.includes("██")){
     const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
     if(! msgs){
@@ -29,7 +33,7 @@ module.exports.run = async (Bot, message, args) => {
         for(var i3=0; i3<indices.length; i3++) {
           hsword[indices[i3]] = hletter;
         }
-        let hEmbed = new Discord.RichEmbed()
+        var hEmbed = new Discord.RichEmbed()
         .setTitle("Test")
         .addField("unknown", `${hsword.join(" ")}`)
         .addField("used", `${uletters.join("")}`);
