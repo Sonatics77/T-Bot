@@ -8,11 +8,11 @@ module.exports.run = async (Bot, message, args) => {
   let uletters = [];
   var dmsg = ""
   for (var i = 0; i < hword.length; i++) {
-    hsword.push("_");
+    hsword.push("██");
   }
   message.channel.send(hsword.join(" "));
 
-  while(hsword.includes("_")){
+  while(hsword.includes("██")){
     const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
     if(! msgs){
       return message.channel.send("Send a valid response");
