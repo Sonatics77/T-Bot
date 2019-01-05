@@ -12,8 +12,7 @@ module.exports.run = async (Bot, message, args) => {
   }
   let phEmbed = new Discord.RichEmbed()
   .setTitle("Test")
-  .addField("unknown", `${hsword.join(" ")}`)
-  .addDescription("**used**");
+  .addField("unknown", `${hsword.join(" ")}`);
 
   message.channel.send(phEmbed);
   while(hsword.includes("██")){
