@@ -9,7 +9,7 @@ module.exports.run = async (Bot, message, args) => {
   for (i = 0; i < hword.length+1; i++) {
     hsword.push("_");
   }
-  message.channel.send(hsword.join(" "))
+  message.channel.send(hsword.join(""));
   const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
   if(! msgs){
     return message.channel.send("Send a valid response");
@@ -18,12 +18,13 @@ module.exports.run = async (Bot, message, args) => {
     var hletter = msg.content.slice(3).trim();
     if (hword.includes(hletter)){
       var indices = [];
-      for(var i=0; i<hword.length;i++) {
-      if (hword[i] == hletter) indices.push(i);
+      for(var i2=0; i2<hword.length;i2++) {
+      if (hword[i2] == hletter) indices.push(i2);
       }
-      for(i=0; i<indices.length; i++) {
-        hsword[indices[i]] = hletter;
+      for(var i3=0; i3<indices.length; i3++) {
+        hsword[indices[i3]] = hletter;
       }
+      message.channel.send(hsowrd.join(""));
     }
   }
 
