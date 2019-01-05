@@ -2,8 +2,8 @@ const Discord = require("discord.js");
 var randomWord = require('random-words');
 
 module.exports.run = async (Bot, message, args) => {
-  let hword = (randomWord({minLength: 7, maxLength: 15})).toLowerCase();
-  message.channel.send(hword);
+  let hword = (randomWord({minLength: 7, maxLength: 15}));
+  message.channel.send(hword.toLowerCase());
   var i;
   var hsword = [];
   for (i = 0; i < hword.length+1; i++) {
