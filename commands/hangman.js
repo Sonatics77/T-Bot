@@ -3,7 +3,7 @@ var randomWord = require('random-words');
 
 module.exports.run = async (Bot, message, args) => {
   let hlword = (randomWord({minLength: 7, maxLength: 15}));
-  let hword = hlword.toUpperCase();
+  let hword = `${hlword}`.toUpperCase();
   message.channel.send(hword);
   var i;
   var hsword = [];
