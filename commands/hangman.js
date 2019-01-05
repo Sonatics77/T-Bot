@@ -8,11 +8,11 @@ module.exports.run = async (Bot, message, args) => {
   let uletters = [];
   var dmsg = ""
   for (var i = 0; i < hword.length; i++) {
-    hsword.push("██");
+    hsword.push("_");
   }
   message.channel.send(hsword.join(" "));
 
-  while(hsword.includes("██")){
+  while(hsword.includes("_")){
     const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
     if(! msgs){
       return message.channel.send("Send a valid response");
@@ -34,11 +34,12 @@ module.exports.run = async (Bot, message, args) => {
         .addField("unknown", `${hsword.join(" ")}`)
         .addField("used", `${uletters.join("")}`);
 
-        message.channel.send(hEmbed)//.then(d_msg => d_msg.delete());
-        message.channel.send(message);
+        message.channel.send(hEmbed).then(d_msg => d_msg.delete(10000));
       }
     }
   }
+
+  message.channel.send(hEmbed);
 
 }
 
