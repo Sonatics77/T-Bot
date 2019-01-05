@@ -5,9 +5,9 @@ module.exports.run = async (Bot, message, args) => {
   let hword = (randomWord());
   message.channel.send(hword);
   var hsword = [];
-  for (var i = 0; i < hword.length; i++) {
-    hsword.push("_");
-    message.channel.send("_");
+  for (var i = 0; i < hword.length+1; i++) {
+    hsword.push("██");
+    message.channel.send("██");
   }
   message.channel.send(hword.length);
   message.channel.send(hsword);
