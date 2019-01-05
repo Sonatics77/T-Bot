@@ -7,7 +7,7 @@ module.exports.run = async (Bot, message, args) => {
   if(! msgs){
     return message.channel.send("Send a valid response");
   } else {
-    message.channel.send(msgs.collectedS);
+    message.channel.send(msgs.collected);
   }
 
 }
