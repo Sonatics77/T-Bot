@@ -5,11 +5,13 @@ module.exports.run = async (Bot, message, args) => {
   let hword = (randomWord());
   message.channel.send(hword);
   var hsword = [];
-  for (var i = 0; i < hword.length+1; i++) {
+  for (var i = 0; i < hword.length; i++) {
     hsword.push("██");
   }
   message.channel.send(hsword.join(" "));
-  const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
+
+  while(hsword.includes("██")){
+    const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
   if(! msgs){
     return message.channel.send("Send a valid response");
   } else {
@@ -28,6 +30,7 @@ module.exports.run = async (Bot, message, args) => {
       message.channel.send(hsword.join(" "));
     }
   }
+}
 
 }
 
