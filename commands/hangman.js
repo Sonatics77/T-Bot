@@ -21,7 +21,7 @@ module.exports.run = async (Bot, message, args) => {
       for(var i=0; i<hword.length;i++) {
       if (hword[i] == hletter) indices.push(i);
       }
-      for(i=0; i<indices.length) {
+      for(i=0; i<indices.length; i++) {
         hsword[indices[i]] = hletter;
       }
     }
