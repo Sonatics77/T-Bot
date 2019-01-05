@@ -4,10 +4,10 @@ var randomWord = require('random-words');
 module.exports.run = async (Bot, message, args) => {
   let hword = (randomWord());
   message.channel.send(hword);
-  var hsword = ["","","","","","","","","","","","","","",""];
+  var hsword = [];
   for (var i = 0; i < hword.length; i++) {
-      hsword[i] = "_";
-    }
+    hsword.push("_");
+  }
   message.channel.send(hword.length);
   message.channel.send(hsword.join(" "));
   const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
