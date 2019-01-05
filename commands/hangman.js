@@ -17,7 +17,7 @@ module.exports.run = async (Bot, message, args) => {
     } else {
       message.channel.send(`${msgs.map(msg => msg.content)}`);
       var awaitR = `${msgs.map(msg => msg.content)}`
-      msgs.delete();
+      msgs.deleteAll();
       var hletter = awaitR.slice(3).trim();
       message.channel.send(hletter);
       if (hword.includes(hletter)){
