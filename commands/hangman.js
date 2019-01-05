@@ -6,6 +6,7 @@ module.exports.run = async (Bot, message, args) => {
   message.channel.send(hword);
   var hsword = [];
   let uletters = [];
+  var dmsg = ""
   for (var i = 0; i < hword.length; i++) {
     hsword.push("██");
   }
@@ -18,6 +19,7 @@ module.exports.run = async (Bot, message, args) => {
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
       msgs.deleteAll();
+      dmsg.delete();
       var hletter = awaitR.slice(3).trim();
       if (hword.includes(hletter)){
         var indices = [];
@@ -33,7 +35,7 @@ module.exports.run = async (Bot, message, args) => {
         .addField("unknown", `${hsword.join(" ")}`)
         .addField("used", `${uletters.join("")}`);
 
-        message.channel.send(hEmbed).then(d_msg => {d_msg.delete(5000)});
+        message.channel.send(hEmbed).then(d_msg => {dmsg = d_msg});
       }
     }
   }
