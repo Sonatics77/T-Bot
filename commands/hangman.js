@@ -8,7 +8,7 @@ module.exports.run = async (Bot, message, args) => {
   for (var i = 0; i < hword.length; i++) {
       hsword[i] = "_";
     }
-  message.channel.send(hsword.length);
+  message.channel.send(hword.length);
   message.channel.send(hsword.join(" "));
   const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
   if(! msgs){
