@@ -5,6 +5,7 @@ module.exports.run = async (Bot, message, args) => {
   let hword = (randomWord());
   message.channel.send(hword);
   var hsword = [];
+  let uletters = [];
   for (var i = 0; i < hword.length; i++) {
     hsword.push("██");
   }
@@ -15,19 +16,24 @@ module.exports.run = async (Bot, message, args) => {
     if(! msgs){
       return message.channel.send("Send a valid response");
     } else {
-      d_msg.delete();
       var awaitR = `${msgs.map(msg => msg.content)}`
       msgs.deleteAll();
       var hletter = awaitR.slice(3).trim();
       if (hword.includes(hletter)){
         var indices = [];
+        uletters.push(hletter);
         for(var i2=0; i2<hword.length;i2++) {
         if (hword[i2] == hletter) indices.push(i2);
         }
         for(var i3=0; i3<indices.length; i3++) {
           hsword[indices[i3]] = hletter;
         }
-        message.channel.send(hsword.join(" ")).then(d_msg);
+        let hEmbed = new Discord.RichEmbed()
+        .setTitle("Test")
+        .addField("unknown", `${hsword.join(" ")}`)
+        .addField("used", `${uletters.join("")}`);
+
+        message.channel.send(hEmbed).then(d_msg => {d_msg.delete(5000)});
       }
     }
   }
