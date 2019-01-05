@@ -14,7 +14,7 @@ module.exports.run = async (Bot, message, args) => {
     return message.channel.send("Send a valid response");
   } else {
     message.channel.send(`${msgs.map(msg => msg.content)}`);
-    var hletter = message.content.slice(3).trim();
+    var hletter = msgs.map(msg => msg.content).slice(3).trim();
     message.channel.send(hletter);
     if (hword.includes(hletter)){
       var indices = [];
