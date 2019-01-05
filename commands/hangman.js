@@ -15,7 +15,9 @@ module.exports.run = async (Bot, message, args) => {
   } else {
     message.channel.send(`${msgs.map(msg => msg.content)}`);
     var hletter = msg.content.slice(5).trim();
-    if (hword.includes(hletter))
+    if (hword.includes(hletter)){
+      
+    }
   }
 
 }
