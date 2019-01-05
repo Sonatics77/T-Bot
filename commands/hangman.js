@@ -6,16 +6,17 @@ module.exports.run = async (Bot, message, args) => {
   message.channel.send(hword);
   var i;
   var hsword = [];
-  for (i = 0; i < hword.length+1; i++) {
+  for (i = 0; i < hword.length; i++) {
     hsword.push("_");
   }
+  message.channel.send(hsword);
   message.channel.send(hsword.join(","));
   const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
   if(! msgs){
     return message.channel.send("Send a valid response");
   } else {
     message.channel.send(`${msgs.map(msg => msg.content)}`);
-    var hletter = msg.content.slice(3).trim();
+    var hletter = message.content.slice(3).trim();
     if (hword.includes(hletter)){
       var indices = [];
       for(var i2=0; i2<hword.length;i2++) {
