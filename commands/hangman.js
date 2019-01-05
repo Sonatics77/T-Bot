@@ -7,10 +7,7 @@ module.exports.run = async (Bot, message, args) => {
   var hsword = [];
   for (var i = 0; i < hword.length+1; i++) {
     hsword.push("██");
-    message.channel.send("██");
   }
-  message.channel.send(hword.length);
-  message.channel.send(hsword);
   message.channel.send(hsword.join(" "));
   const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
   if(! msgs){
@@ -18,6 +15,7 @@ module.exports.run = async (Bot, message, args) => {
   } else {
     message.channel.send(`${msgs.map(msg => msg.content)}`);
     var hletter = message.content.slice(3).trim();
+    message.channel.send(hletter);
     if (hword.includes(hletter)){
       var indices = [];
       for(var i2=0; i2<hword.length;i2++) {
@@ -26,7 +24,7 @@ module.exports.run = async (Bot, message, args) => {
       for(var i3=0; i3<indices.length; i3++) {
         hsword[indices[i3]] = hletter;
       }
-      message.channel.send(hsowrd.join(" "));
+      message.channel.send(hsword.join(" "));
     }
   }
 
