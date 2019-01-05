@@ -3,11 +3,11 @@ var randomWord = require('random-words');
 
 module.exports.run = async (Bot, message, args) => {
   let hword = (randomWord({min: 7, max: 15}));
-  const rCollection = await new Discord.MessageCollector(message.channel, msg => msg.content.includes("t.hm"), {maxMatches: 1});
-  if(!rCollection){
+  const msgs = await new Discord.MessageCollector(message.channel, msg => msg.content.includes("t.hm"), {maxMatches: 1});
+  if(!msgs){
     return message.channel.send("Send a valid response")
   } else {
-    message.channel.send(rCollection);
+    message.channel.send(msgs);
   }
 
 }
