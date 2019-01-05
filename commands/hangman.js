@@ -13,16 +13,12 @@ module.exports.run = async (Bot, message, args) => {
   message.channel.send(hsword.join(" "));
 
   while(hsword.includes("██")){
-    const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {time: 30000});
+    const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
     if(! msgs){
       return message.channel.send("Send a valid response");
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
       msgs.deleteAll();
-      channel.fetchMessage(dmsg).then(async msg => {
-      await channel.send("thing");
-      if (msg) msg.delete();
-      });
       var hletter = awaitR.slice(3).trim();
       if (hword.includes(hletter)){
         var indices = [];
@@ -38,8 +34,8 @@ module.exports.run = async (Bot, message, args) => {
         .addField("unknown", `${hsword.join(" ")}`)
         .addField("used", `${uletters.join("")}`);
 
-        message.channel.send(hEmbed).then(d_msg => {dmsg = d_msg.id});
-
+        message.channel.send(hEmbed)//.then(d_msg => d_msg.delete());
+        message.channel.send(message);
       }
     }
   }
