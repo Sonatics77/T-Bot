@@ -44,15 +44,13 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
       //}
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
       if (ldel == 0) {
-        message.channel.send(lmsg);
         message.channel.fetchMessage(lmsg).then(dllmsg => {
           dllmsg.delete();
           message.channel.send(sendArr);
           ldel = 1
         })
       } else {
-        var lmsg = message.channel.lastMessageID;
-        message.channel.send(lmsg);
+        lmsg = message.channel.lastMessageID;
         message.channel.fetchMessage(lmsg).then(dlmsg => {
            dlmsg.delete();
            message.channel.send(sendArr);
