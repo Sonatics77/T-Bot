@@ -22,7 +22,7 @@ module.exports.run = async (Bot, message, args) => {
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
       msgs.deleteAll();
-      let lMsg = message.channel.lastMessageID;
+      let lmsg = message.channel.lastMessageID;
       message.channel.send(lmsg);
       lmsg.delete();
 
