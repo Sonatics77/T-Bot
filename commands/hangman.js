@@ -17,6 +17,7 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
     const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
     //awaits for response "hm letter"
     var l1msg = message.channel.lastMessageID;
+    message.channel.send(`${l1msg} thing`);
     message.channel.fetchMessage(l1msg).then(dlmsg => {
       dlmsg.delete();
     })
