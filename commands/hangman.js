@@ -42,6 +42,7 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
       //}
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
       var lmsg = message.channel.lastMessageID;
+      message.channel.send(lmsg);
       message.channel.fetchMessage(lmsg).then(dlmsg => {
         dlmsg.delete();
         message.channel.send(sendArr);
