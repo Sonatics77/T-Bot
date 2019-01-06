@@ -22,7 +22,6 @@ module.exports.run = async (Bot, message, args) => {
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
       //msgs.deleteAll();
-      message.channel.send(lmsg);
       var hletter = awaitR.slice(3).trim();
       if (hword.includes(hletter)){
         var indices = [];
@@ -35,6 +34,7 @@ module.exports.run = async (Bot, message, args) => {
         }
         let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
         let lmsg = message.channel.lastMessageID;
+        message.channel.send(lmsg);
         message.channel.send(sendArr)//.then(d_msg => d_msg.delete(10000));
         //lmsg.delete();
       }
