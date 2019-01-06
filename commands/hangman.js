@@ -26,12 +26,9 @@ module.exports.run = async (Bot, message, args) => {
     let l1msg = hChannel.lastMessageID;
     console.log(l1msg);
     console.log(lmsg);
-    hChannel.fetchMessage(hChannel.lastMessageID).then(async dl1msg => {
+    hChannel.fetchMessage(l1msg).then(async dl1msg => {
        await dl1msg.delete();
 
-    })
-    hChannel.fetchMessage(hChannel.lastMessageID).then(async dl1msg => {
-       await dl1msg.delete();
     })
     //deletes response
     // TRY SEDNING UPDATE AT TOP
@@ -70,6 +67,9 @@ module.exports.run = async (Bot, message, args) => {
       //}
       //edits last message to updated
     }
+    hChannel.fetchMessage(lmsg).then(async dlmsg => {
+      dlmsg.delete();
+    })
   }
 //catch(console.log(err));
 
