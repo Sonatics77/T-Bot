@@ -13,6 +13,8 @@ module.exports.run = async (Bot, message, args) => {
 
 let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
   await message.channel.send(send1Arr);
+  var lmsg = message.channel.lastMessageID;
+  var ldel = 0
   while(hsword.includes("██")){
     const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
     //awaits for response "hm letter"
@@ -42,12 +44,20 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
 
       //}
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
-      var lmsg = message.channel.lastMessageID;
-      message.channel.send(lmsg);
-      message.channel.fetchMessage(lmsg).then(dlmsg => {
-        dlmsg.delete();
-        message.channel.send(sendArr);
-      })
+      if (! ldel == 0) {
+        message.channel.send(lmsg);
+        message.channel.fetchMessage(lmsg).then(dlmsg => {
+          dlmsg.delete();
+          message.channel.send(sendArr);
+        })
+      } else {
+        var lmsg = message.channel.lastMessageID;
+        message.channel.send(lmsg);
+        message.channel.fetchMessage(lmsg).then(dlmsg => {
+          dlmsg.delete();
+          message.channel.send(sendArr);
+        })
+      }
       //edits last message to updated
 
     }
