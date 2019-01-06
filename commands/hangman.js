@@ -36,7 +36,9 @@ module.exports.run = async (Bot, message, args) => {
         message.channel.send(sendArr)//.then(d_msg => d_msg.delete(10000));
         var lmsg = message.channel.lastMessageID;
         message.channel.send(lmsg);
-        //lmsg.delete();
+        lmsg.delete();
+        lmsg = message.channel.lastMessageID;
+        message.channel.send(lmsg);
       }
     }
   }
