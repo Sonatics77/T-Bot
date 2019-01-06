@@ -6,7 +6,7 @@ module.exports.run = async (Bot, message, args) => {
   snekfetch.get(api).then(r => {
     let {body} = r.body
 
-    message.channel.send(jokebody);
+    message.channel.send(body);
   })
 }
 
