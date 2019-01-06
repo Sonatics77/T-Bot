@@ -18,8 +18,10 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
   while(hsword.includes("██")){
     const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
     //awaits for response "hm letter"
-    let demsg = message.channel.fetchMessage(msg.id);
-    demsg.delete();
+    let l1msg = message.channel.lastMessageID;
+    message.channel.fetchMessage(l1msg).then(dl1msg => {
+       dl1msg.delete();
+    })
     //deletes response
     if(! msgs){
       return message.channel.send("Send a valid response");
@@ -43,21 +45,20 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
       if (ldel == 0) {
         message.channel.send(lmsg);
-        message.channel.fetchMessage(lmsg).then(dlmsg => {
-          dlmsg.delete();
+        message.channel.fetchMessage(lmsg).then(dllmsg => {
+          dllmsg.delete();
           message.channel.send(sendArr);
           ldel = 1
         })
       } else {
         var lmsg = message.channel.lastMessageID;
         message.channel.send(lmsg);
-        await message.channel.fetchMessage(lmsg).then(dlmsg => {
+        message.channel.fetchMessage(lmsg).then(dlmsg => {
            dlmsg.delete();
            message.channel.send(sendArr);
         })
       }
       //edits last message to updated
-
     }
   }
 
