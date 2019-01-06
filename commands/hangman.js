@@ -3,7 +3,8 @@ var randomWord = require('random-words');
 
 module.exports.run = async (Bot, message, args) => {
   let hword = (randomWord());
-  message.channel.send(hword);
+  let hChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
+  hChannel.send(hword);
   var hsword = [];
   let uletters = [];
   var dmsg = ""
@@ -12,19 +13,19 @@ module.exports.run = async (Bot, message, args) => {
   }
 
 let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
-  await message.channel.send(send1Arr);
-  var lmsg = message.channel.lastMessageID;
+  await hChannel.send(send1Arr);
+  var lmsg = hChannel.lastMessageID;
   var ldel = 0
   while(hsword.includes("██")){
-    const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
+    const msgs = await hChannel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
     //awaits for response "hm letter"
-    let l1msg = message.channel.lastMessageID;
-    message.channel.fetchMessage(l1msg).then(dl1msg => {
+    let l1msg = hChannel.lastMessageID;
+    hChannel.fetchMessage(l1msg).then(dl1msg => {
        dl1msg.delete();
     })
     //deletes response
     if(! msgs){
-      return message.channel.send("Send a valid response");
+      return hChannel.send("Send a valid response");
       //ends if invalid response
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
@@ -44,16 +45,16 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
       //}
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
 //      if (ldel == 0) {
-        lmsg = message.channel.lastMessageID;
-        await message.channel.fetchMessage(lmsg).then(dllmsg => {
+        lmsg = hChannel.lastMessageID;
+        await hChannel.fetchMessage(lmsg).then(dllmsg => {
           dllmsg.delete();
-          message.channel.send(sendArr);
+          hChannel.send(sendArr);
           ldel = 1
         })
   //    } else {
-    //    message.channel.fetchMessage(lmsg).then(dlmsg => {
+    //    hChannel.fetchMessage(lmsg).then(dlmsg => {
       //     dlmsg.delete();
-        //   message.channel.send(sendArr);
+        //   hChannel.send(sendArr);
         //})
       //}
       //edits last message to updated
