@@ -22,6 +22,10 @@ module.exports.run = async (Bot, message, args) => {
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
       msgs.deleteAll();
+      let lMsg = message.channel.lastMessageID;
+      message.channel.send(lmsg);
+      lmsg.delete();
+
       var hletter = awaitR.slice(3).trim();
       if (hword.includes(hletter)){
         var indices = [];
@@ -32,11 +36,8 @@ module.exports.run = async (Bot, message, args) => {
         for(var i3=0; i3<indices.length; i3++) {
           hsword[indices[i3]] = hletter;
         }
-        var hEmbed = new Discord.RichEmbed()
-        .setTitle("Test")
-        .addField("unknown", `${hsword}`);
-
-        message.channel.send(hEmbed).then(d_msg => d_msg.delete(10000));
+        let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
+        message.channel.send(sendArr)//.then(d_msg => d_msg.delete(10000));
       }
     }
   }
@@ -57,9 +58,9 @@ module.exports.help = {
 //  }
 
 
- //______
- //|/   |
- //|    O
- //|   /|\
- //|   / \
-///|\
+ ______
+ |/   |
+ |    O
+ |   /|\
+ |   / \
+/|\
