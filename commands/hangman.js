@@ -24,8 +24,11 @@ module.exports.run = async (Bot, message, args) => {
     const msgs = await hChannel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
     //awaits for response "hm letter"
     let l1msg = hChannel.lastMessageID;
-    hChannel.fetchMessage(l1msg).then(dl1msg => {
-       dl1msg.delete();
+    console.log(l1msg);
+    hChannel.fetchMessage(l1msg).then(async dl1msg => {
+       await dl1msg.delete();
+       l1msg = hChannel.lastMessageID;
+       console.log(l1msg);
     })
     //deletes response
     // TRY SEDNING UPDATE AT TOP
@@ -50,12 +53,12 @@ module.exports.run = async (Bot, message, args) => {
       //}
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
 //      if (ldel == 0) {
-        lmsg = hChannel.lastMessageID;
-        hChannel.fetchMessage(lmsg).then(async dlmsg => {
+    //  \  lmsg = hChannel.lastMessageID;
+    //  \  hChannel.fetchMessage(lmsg).then(async dlmsg => {
           //await hChannel.send(sendArr);
-          dlmsg.delete();
+    //      dlmsg.delete();
           //ldel = 1
-        })
+    //  \  })
   //    } else {
     //    hChannel.fetchMessage(lmsg).then(dlmsg => {
       //     dlmsg.delete();
