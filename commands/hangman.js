@@ -24,6 +24,7 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
        dl1msg.delete();
     })
     //deletes response
+    // TRY SEDNING UPDATE AT TOP
     if(! msgs){
       return hChannel.send("Send a valid response");
       //ends if invalid response
@@ -46,11 +47,11 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
 //      if (ldel == 0) {
         lmsg = hChannel.lastMessageID;
-        let dlmsg = hChannel.fetchMessage(lmsg)//.then(dllmsg => {
+        hChannel.fetchMessage(lmsg).then(async dlmsg => {
+          await hChannel.send(sendArr);
           dlmsg.delete();
-          hChannel.send(sendArr);
           ldel = 1
-        //})
+        })
   //    } else {
     //    hChannel.fetchMessage(lmsg).then(dlmsg => {
       //     dlmsg.delete();
