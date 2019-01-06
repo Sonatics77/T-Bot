@@ -25,10 +25,12 @@ module.exports.run = async (Bot, message, args) => {
     //awaits for response "hm letter"
     let l1msg = hChannel.lastMessageID;
     console.log(l1msg);
-    hChannel.fetchMessage(l1msg).then(async dl1msg => {
+    hChannel.fetchMessage(hChannel.lastMessageID).then(async dl1msg => {
        await dl1msg.delete();
-       l1msg = hChannel.lastMessageID;
-       console.log(l1msg);
+
+    })
+    hChannel.fetchMessage(hChannel.lastMessageID).then(async dl1msg => {
+       await dl1msg.delete();
     })
     //deletes response
     // TRY SEDNING UPDATE AT TOP
