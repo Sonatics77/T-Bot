@@ -25,6 +25,7 @@ module.exports.run = async (Bot, message, args) => {
     //awaits for response "hm letter"
     let l1msg = hChannel.lastMessageID;
     console.log(l1msg);
+    console.log(lmsg);
     hChannel.fetchMessage(hChannel.lastMessageID).then(async dl1msg => {
        await dl1msg.delete();
 
