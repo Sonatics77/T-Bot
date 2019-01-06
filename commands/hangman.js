@@ -10,18 +10,22 @@ module.exports.run = async (Bot, message, args) => {
   for (var i = 0; i < hword.length; i++) {
     hsword.push("██");
   }
-  let phEmbed = new Discord.RichEmbed()
-  .setTitle("Test")
-  .addField("unknown", `${hsword.join(" ")}`);
 
-  message.channel.send(phEmbed);
+let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
+  await message.channel.send(send1Arr);
   while(hsword.includes("██")){
     const msgs = await message.channel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
+    //awaits for response "hm letter"
+    lmsg = message.channel.lastMessageID;
+    message.channel.fetchMessage(lmsg).then(dlmsg => {
+      dlmsg.delete();
+    })
+    //deletes response
     if(! msgs){
       return message.channel.send("Send a valid response");
+      //ends if invalid response
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
-      //msgs.deleteAll();
       var hletter = awaitR.slice(3).trim();
       if (hword.includes(hletter)){
         var indices = [];
@@ -37,18 +41,15 @@ module.exports.run = async (Bot, message, args) => {
 
       //}
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
-      await message.channel.send(sendArr)//.then(d_msg => d_msg.delete(10000));
       var lmsg = message.channel.lastMessageID;
-      //await message.channel.send(lmsg);
       message.channel.fetchMessage(lmsg).then(dlmsg => {
-        dlmsg.delete();
+        dlmsg.edit(sendArr);
       })
-      //lmsg = message.channel.lastMessageID;
-      message.channel.send(lmsg);
+      //edits last message to updated
+
     }
   }
 
-  message.channel.send(hEmbed);
 
 function hang1() {
 
