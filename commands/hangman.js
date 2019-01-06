@@ -20,8 +20,8 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
     //awaits for response "hm letter"
     var l1msg = message.channel.lastMessageID;
     message.channel.send(`${l1msg} thing`);
-    message.channel.fetchMessage(l1msg).then(dl1msg => {
-      await dl1msg.delete();
+    await message.channel.fetchMessage(l1msg).then(dl1msg => {
+      dl1msg.delete();
     })
     //deletes response
     if(! msgs){
@@ -53,9 +53,9 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
       } else {
         var lmsg = message.channel.lastMessageID;
         message.channel.send(lmsg);
-        message.channel.fetchMessage(lmsg).then(dlmsg => {
-          await dlmsg.delete();
-          await message.channel.send(sendArr);
+        await message.channel.fetchMessage(lmsg).then(dlmsg => {
+           dlmsg.delete();
+           message.channel.send(sendArr);
         })
       }
       //edits last message to updated
