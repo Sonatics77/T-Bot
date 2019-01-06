@@ -34,8 +34,7 @@ module.exports.run = async (Bot, message, args) => {
         }
         var hEmbed = new Discord.RichEmbed()
         .setTitle("Test")
-        .addField("unknown", `${hsword.join(" ")}`)
-        .addField("used", `${uletters.join("")}`);
+        .addField("unknown", `${hsword}`);
 
         message.channel.send(hEmbed).then(d_msg => d_msg.delete(10000));
       }
@@ -44,6 +43,9 @@ module.exports.run = async (Bot, message, args) => {
 
   message.channel.send(hEmbed);
 
+function hang1() {
+
+}
 }
 
 module.exports.help = {
@@ -53,3 +55,11 @@ module.exports.help = {
 //  for (var i = 0; i < hword.length; i++) {
 //    hsword.push("_");
 //  }
+
+
+ //______
+ //|/   |
+ //|    O
+ //|   /|\
+ //|   / \
+///|\
