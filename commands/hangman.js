@@ -23,7 +23,6 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
        dl1msg.delete();
     })
     //deletes response
-    lmsg = message.channel.lastMessageID;
     if(! msgs){
       return message.channel.send("Send a valid response");
       //ends if invalid response
@@ -45,9 +44,10 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
       //}
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
 //      if (ldel == 0) {
+        lmsg = message.channel.lastMessageID;
         message.channel.fetchMessage(lmsg).then(dllmsg => {
           dllmsg.delete();
-          message.channel.send(sendArr);
+          await message.channel.send(sendArr);
           ldel = 1
         })
   //    } else {
