@@ -65,7 +65,7 @@ module.exports.run = async (Bot, message, args) => {
       //edits last message to updated
     }
   }
-.catch(console.log(err));
+//catch(console.log(err));
 
 function hang1() {
 
