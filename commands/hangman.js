@@ -12,11 +12,15 @@ module.exports.run = async (Bot, message, args) => {
     hsword.push("██");
   }
 
-let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
-  await hChannel.send(send1Arr);
-  var lmsg = hChannel.lastMessageID;
-  var ldel = 0
+//let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
+  //await hChannel.send(send1Arr);
+  //var lmsg = hChannel.lastMessageID;
+  //var ldel = 0
   while(hsword.includes("██")){
+    let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
+      await hChannel.send(send1Arr);
+      var lmsg = hChannel.lastMessageID;
+      //var ldel = 0
     const msgs = await hChannel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
     //awaits for response "hm letter"
     let l1msg = hChannel.lastMessageID;
@@ -46,11 +50,11 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
       //}
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
 //      if (ldel == 0) {
-        await lmsg = hChannel.lastMessageID;
+        lmsg = hChannel.lastMessageID;
         hChannel.fetchMessage(lmsg).then(async dlmsg => {
-          await hChannel.send(sendArr);
+          //await hChannel.send(sendArr);
           dlmsg.delete();
-          ldel = 1
+          //ldel = 1
         })
   //    } else {
     //    hChannel.fetchMessage(lmsg).then(dlmsg => {
