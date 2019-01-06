@@ -37,10 +37,10 @@ module.exports.run = async (Bot, message, args) => {
 
       //}
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
-      message.channel.send(sendArr)//.then(d_msg => d_msg.delete(10000));
+      await message.channel.send(sendArr)//.then(d_msg => d_msg.delete(10000));
       var lmsg = message.channel.lastMessageID;
-      message.channel.send(lmsg);
-      lmsg.delete();``
+      await message.channel.send(lmsg);
+      lmsg.delete();
       lmsg = message.channel.lastMessageID;
       message.channel.send(lmsg);
     }
