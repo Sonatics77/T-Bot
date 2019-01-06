@@ -21,7 +21,7 @@ module.exports.run = async (Bot, message, args) => {
       return message.channel.send("Send a valid response");
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
-      msgs.deleteAll();
+      //msgs.deleteAll();
       let lmsg = message.channel.lastMessageID;
       message.channel.send(lmsg);
 
