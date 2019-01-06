@@ -46,12 +46,11 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
 //      if (ldel == 0) {
         lmsg = hChannel.lastMessageID;
-        lmsg.delete();
-        await hChannel.fetchMessage(lmsg).then(dllmsg => {
-          dllmsg.delete();
+        let dlmsg = hChannel.fetchMessage(lmsg)//.then(dllmsg => {
+          dlmsg.delete();
           hChannel.send(sendArr);
           ldel = 1
-        })
+        //})
   //    } else {
     //    hChannel.fetchMessage(lmsg).then(dlmsg => {
       //     dlmsg.delete();
