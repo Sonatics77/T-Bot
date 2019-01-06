@@ -46,7 +46,7 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
       //}
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
 //      if (ldel == 0) {
-        lmsg = hChannel.lastMessageID;
+        await lmsg = hChannel.lastMessageID;
         hChannel.fetchMessage(lmsg).then(async dlmsg => {
           await hChannel.send(sendArr);
           dlmsg.delete();
@@ -61,7 +61,7 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
       //edits last message to updated
     }
   }
-
+.catch(console.log(err));
 
 function hang1() {
 
