@@ -39,9 +39,11 @@ module.exports.run = async (Bot, message, args) => {
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
       await message.channel.send(sendArr)//.then(d_msg => d_msg.delete(10000));
       var lmsg = message.channel.lastMessageID;
-      await message.channel.send(lmsg);
-      lmsg.delete();
-      lmsg = message.channel.lastMessageID;
+      //await message.channel.send(lmsg);
+      channel.fetchMessage(lmsg).then(dlmsg => {
+        dlmsg.delete();
+      })
+      //lmsg = message.channel.lastMessageID;
       message.channel.send(lmsg);
     }
   }
