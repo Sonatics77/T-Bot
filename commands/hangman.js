@@ -44,18 +44,18 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
 
       //}
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
-      if (ldel == 0) {
+//      if (ldel == 0) {
         message.channel.fetchMessage(lmsg).then(dllmsg => {
           dllmsg.delete();
           message.channel.send(sendArr);
           ldel = 1
         })
-      } else {
-        message.channel.fetchMessage(lmsg).then(dlmsg => {
-           dlmsg.delete();
-           message.channel.send(sendArr);
-        })
-      }
+  //    } else {
+    //    message.channel.fetchMessage(lmsg).then(dlmsg => {
+      //     dlmsg.delete();
+        //   message.channel.send(sendArr);
+        //})
+      //}
       //edits last message to updated
     }
   }
