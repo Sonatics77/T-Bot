@@ -23,6 +23,7 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
        dl1msg.delete();
     })
     //deletes response
+    lmsg = message.channel.lastMessageID;
     if(! msgs){
       return message.channel.send("Send a valid response");
       //ends if invalid response
@@ -50,7 +51,6 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
           ldel = 1
         })
       } else {
-        lmsg = message.channel.lastMessageID;
         message.channel.fetchMessage(lmsg).then(dlmsg => {
            dlmsg.delete();
            message.channel.send(sendArr);
