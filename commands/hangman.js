@@ -20,8 +20,8 @@ let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
     //awaits for response "hm letter"
     var l1msg = message.channel.lastMessageID;
     message.channel.send(`${l1msg} thing`);
-    message.channel.fetchMessage(l1msg).then(dlmsg => {
-      dlmsg.delete();
+    message.channel.fetchMessage(l1msg).then(dl1msg => {
+      dl1msg.delete();
     })
     //deletes response
     if(! msgs){
