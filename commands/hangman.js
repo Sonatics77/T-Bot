@@ -52,6 +52,7 @@ module.exports.run = async (Bot, message, args) => {
         }
 
       } else {
+        uletters.push(hletter);
         if (! hword.includes(hletter)){
           incorrect = incorrect+1;
           if (incorrect == 1) {
