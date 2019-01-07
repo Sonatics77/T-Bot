@@ -32,7 +32,8 @@ Bot.on("ready", async () => {
 });
 
 Bot.on("message", async message => {
-  if(message.author.bot) return;
+  if (message.content.slice(2) = `${prefix}`){
+      if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
   let prefix = "t.";
@@ -44,6 +45,7 @@ Bot.on("message", async message => {
   let commandfile = Bot.commands.get(cmd.slice(prefix.length));
   console.log(commandfile);
   if(commandfile) commandfile.run(Bot,message,args);
+}
 });
 
 
