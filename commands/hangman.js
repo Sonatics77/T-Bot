@@ -25,8 +25,7 @@ module.exports.run = async (Bot, message, args) => {
       // send(drawfunction(how many wrong(AS ARRAY)))
       var lmsg = hChannel.lastMessageID;
       //var ldel = 0
-    const msgs = await hChannel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
-    console.log(msg.map(msg = msg.author.id));
+    const msgs = await hChannel.awaitMessages(msg => msg.author.id == message.author.id, {maxMatches: 1});
     //awaits for response "hm letter"
     var l1msg = hChannel.lastMessageID;
     //console.log(l1msg);
