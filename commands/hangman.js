@@ -96,6 +96,9 @@ module.exports.run = async (Bot, message, args) => {
   }
 //catch(console.log(err));
 
+}
+
+
 function hang1() {
   hHang[2] = "|                O";
 }
@@ -116,7 +119,6 @@ function hang6() {
 }
 
 
-}
 
 module.exports.help = {
   name: "test"
