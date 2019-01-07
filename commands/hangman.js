@@ -3,9 +3,11 @@ var randomWord = require('random-words');
 
 module.exports.run = async (Bot, message, args) => {
   let hword = (randomWord());
-  let hHang = ["――――", "|/              |", "|                |", "|                |", "|   ", "|\\"];
+  let hHang = ["――――", "|/              |", "|                ", "|                ", "|                ", "|\\"];
   let hChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
   hChannel.send(hword);
+  hChannel.send(hHang);
+  hang1();
   hChannel.send(hHang);
   var hsword = [];
   let uletters = [];
@@ -77,8 +79,25 @@ module.exports.run = async (Bot, message, args) => {
 //catch(console.log(err));
 
 function hang1() {
-
+  hHang[2] = "|                O";
 }
+function hang2() {
+  hHang[3] = "|               /";
+}
+function hang3() {
+  hHang[3] = "|               /|";
+}
+function hang4() {
+  hHang[3] = "|               /|\\";
+}
+function hang5() {
+  hHang[4] = "|               /";
+}
+function hang6() {
+  hHang[4] = "|               / \\";
+}
+
+
 }
 
 module.exports.help = {
@@ -92,7 +111,7 @@ module.exports.help = {
 
  //______
 // |/   |
- //|    O
+ //|                O
  //|               /|\\
  //|               / \\
 ///|\\
