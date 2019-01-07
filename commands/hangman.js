@@ -94,6 +94,7 @@ module.exports.run = async (Bot, message, args) => {
       dlmsg.delete();
     })
   }
+  await hChannel.send(send1Arr);
 //catch(console.log(err));
 
 function hang1() {
