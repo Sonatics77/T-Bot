@@ -72,8 +72,6 @@ module.exports.run = async (Bot, message, args) => {
           }
           if (incorrect == 6) {
             hang6();
-          }
-          if (incorrect == 7) {
             var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
               await hChannel.send(send1Arr);
               return hChannel.send("You lost ㄴㅆㅅㅁ");
