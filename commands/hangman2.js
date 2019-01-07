@@ -140,7 +140,7 @@ function hang6() {
 
 
 module.exports.help = {
-  name: "hangman"
+  name: "hang"
 }
 
 //  for (var i = 0; i < hword.length; i++) {
