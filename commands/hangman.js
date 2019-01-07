@@ -19,7 +19,7 @@ module.exports.run = async (Bot, message, args) => {
   //var lmsg = hChannel.lastMessageID;
   //var ldel = 0
   while(hsword.includes("██")){
-    var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
+    var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
       await hChannel.send(send1Arr);
       // send(drawfunction(how many wrong(AS ARRAY)))
       var lmsg = hChannel.lastMessageID;
@@ -27,8 +27,8 @@ module.exports.run = async (Bot, message, args) => {
     const msgs = await hChannel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
     //awaits for response "hm letter"
     let l1msg = hChannel.lastMessageID;
-    console.log(l1msg);
-    console.log(lmsg);
+    //console.log(l1msg);
+    //console.log(lmsg);
     hChannel.fetchMessage(l1msg).then(async dl1msg => {
        await dl1msg.delete();
 
@@ -75,7 +75,7 @@ module.exports.run = async (Bot, message, args) => {
           }
         }
       }
-      let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
+      //let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
 //      if (ldel == 0) {
     //  \  lmsg = hChannel.lastMessageID;
     //  \  hChannel.fetchMessage(lmsg).then(async dlmsg => {
@@ -95,7 +95,7 @@ module.exports.run = async (Bot, message, args) => {
       dlmsg.delete();
     })
   }
-  var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
+  var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
     await hChannel.send(send1Arr);
 //catch(console.log(err));
 
