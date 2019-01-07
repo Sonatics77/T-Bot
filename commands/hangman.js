@@ -42,6 +42,9 @@ module.exports.run = async (Bot, message, args) => {
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
       var hletter = awaitR.trim();
+      if (awaitR.trim() == end) {
+        return message.channel.send("Hangman game ended");
+      } else {
       if (hword.includes(hletter)&& !uletters.includes(hletter) && hletter.length == 1){
         var indices = [];
         uletters.push(hletter);
@@ -84,6 +87,7 @@ module.exports.run = async (Bot, message, args) => {
           }
         }
       }
+    }
       //let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
 //      if (ldel == 0) {
     //  \  lmsg = hChannel.lastMessageID;
