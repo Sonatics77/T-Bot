@@ -27,7 +27,7 @@ module.exports.run = async (Bot, message, args) => {
       //var ldel = 0
     const msgs = await hChannel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
     //awaits for response "hm letter"
-    let l1msg = hChannel.lastMessageID;
+    var l1msg = hChannel.lastMessageID;
     //console.log(l1msg);
     //console.log(lmsg);
     hChannel.fetchMessage(l1msg).then(async dl1msg => {
