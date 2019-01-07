@@ -41,7 +41,7 @@ module.exports.run = async (Bot, message, args) => {
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
       var hletter = awaitR.slice(3).trim();
-      if (hword.includes(hletter)&& !uletter.includes(hletter)){
+      if (hword.includes(hletter)&& !uletters.includes(hletter)){
         var indices = [];
         uletters.push(hletter);
         for(var i2=0; i2<hword.length;i2++) {
