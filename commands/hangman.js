@@ -42,7 +42,7 @@ module.exports.run = async (Bot, message, args) => {
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
       var hletter = awaitR.slice(3).trim();
-      if (hword.includes(hletter)&& !uletters.includes(hletter)){
+      if (hword.includes(hletter)&& !uletters.includes(hletter) && hletter.length == 1){
         var indices = [];
         uletters.push(hletter);
         //adds letter to used
