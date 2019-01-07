@@ -7,7 +7,8 @@ module.exports.run = async (Bot, message, args) => {
   let hChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
   hChannel.send(hword);
   hChannel.send(hHang);
-  hang1();
+  let test = 1;
+  `hang${test}`();
   hChannel.send(hHang);
   var hsword = [];
   let uletters = [];
