@@ -20,7 +20,7 @@ module.exports.run = async (Bot, message, args) => {
   //var lmsg = hChannel.lastMessageID;
   //var ldel = 0
   while(hsword.includes("██")){
-    var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`, `Incorrect: ${hincorrect}`];
+    var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`, `Incorrect: ${hincorrect.join("")}`];
       await hChannel.send(send1Arr);
       // send(drawfunction(how many wrong(AS ARRAY)))
       var lmsg = hChannel.lastMessageID;
@@ -45,6 +45,7 @@ module.exports.run = async (Bot, message, args) => {
       if (hword.includes(hletter)&& !uletters.includes(hletter)){
         var indices = [];
         uletters.push(hletter);
+        //adds letter to used
         for(var i2=0; i2<hword.length;i2++) {
         if (hword[i2] == hletter) indices.push(i2);
         }
@@ -54,9 +55,12 @@ module.exports.run = async (Bot, message, args) => {
 
       } else {
         uletters.push(hletter);
+        //adds letter to used
         if (! hword.includes(hletter)){
           hincorrect.push(hletter);
+          //adds letter to incorrect
           incorrect = incorrect+1;
+          //draws correct hangman
           if (incorrect == 1) {
             hang1();
           }
@@ -74,7 +78,7 @@ module.exports.run = async (Bot, message, args) => {
           }
           if (incorrect == 6) {
             hang6();
-            var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`, `Incorrect: ${hincorrect}`];
+            var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`, `Incorrect: ${hincorrect.join("")}`];
               await hChannel.send(send1Arr);
               return hChannel.send(`You lost ㄴㅆㅅㅁ, the word was ${hword}.`);
           }
@@ -100,7 +104,7 @@ module.exports.run = async (Bot, message, args) => {
       dlmsg.delete();
     })
   }
-  var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
+  var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`, `Incorrect: ${hincorrect.join("")}`];
     await hChannel.send(send1Arr);
     return hChannel.send("Good job, you won!");
 //catch(console.log(err));
