@@ -95,7 +95,8 @@ module.exports.run = async (Bot, message, args) => {
       dlmsg.delete();
     })
   }
-  await hChannel.send(send1Arr);
+  var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
+    await hChannel.send(send1Arr);
 //catch(console.log(err));
 
 function hang1() {
