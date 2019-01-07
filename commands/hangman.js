@@ -26,6 +26,7 @@ module.exports.run = async (Bot, message, args) => {
       var lmsg = hChannel.lastMessageID;
       //var ldel = 0
     const msgs = await hChannel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
+    console.log(msg.author.id);
     //awaits for response "hm letter"
     var l1msg = hChannel.lastMessageID;
     //console.log(l1msg);
@@ -104,6 +105,8 @@ module.exports.run = async (Bot, message, args) => {
       dlmsg.delete();
     })
   }
+  hChannel.fetchMessage(lmsg).then(async dlmsg => {
+    dlmsg.delete();
   var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`, `Incorrect: ${hincorrect.join("")}`];
     await hChannel.send(send1Arr);
     return hChannel.send("Good job, you won!");
