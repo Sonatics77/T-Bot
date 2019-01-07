@@ -19,7 +19,7 @@ module.exports.run = async (Bot, message, args) => {
   //var lmsg = hChannel.lastMessageID;
   //var ldel = 0
   while(hsword.includes("██")){
-    var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Unknown: ${hsword.join(" ")}`,`Used: `];
+    var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
       await hChannel.send(send1Arr);
       // send(drawfunction(how many wrong(AS ARRAY)))
       var lmsg = hChannel.lastMessageID;
@@ -41,7 +41,7 @@ module.exports.run = async (Bot, message, args) => {
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
       var hletter = awaitR.slice(3).trim();
-      if (hword.includes(hletter)){
+      if (hword.includes(hletter)&& !uletter.includes(hletter)){
         var indices = [];
         uletters.push(hletter);
         for(var i2=0; i2<hword.length;i2++) {
