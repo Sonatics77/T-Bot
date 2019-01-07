@@ -100,6 +100,7 @@ module.exports.run = async (Bot, message, args) => {
   }
   var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
     await hChannel.send(send1Arr);
+    return hChannel.send("Good job, you won!");
 //catch(console.log(err));
 
 function hang1() {
