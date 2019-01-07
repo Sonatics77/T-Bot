@@ -5,7 +5,7 @@ module.exports.run = async (Bot, message, args) => {
   var hword = (randomWord());
   var hHang = ["――――", "|/              |", "|                ", "|                ", "|                ", "|\\"];
   let hChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
-  hChannel.send(hword);
+  //hChannel.send(hword);
   var incorrect = 0;
   var hsword = [];
   var uletters = [];
@@ -128,7 +128,7 @@ function hang6() {
 
 
 module.exports.help = {
-  name: "test"
+  name: "hangman"
 }
 
 //  for (var i = 0; i < hword.length; i++) {
