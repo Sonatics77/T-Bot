@@ -42,7 +42,7 @@ module.exports.run = async (Bot, message, args) => {
     } else {
       var awaitR = `${msgs.map(msg => msg.content)}`
       var hletter = awaitR.trim();
-      if (awaitR.trim() == end) {
+      if (awaitR.trim() == "end") {
         return message.channel.send("Hangman game ended");
       } else {
       if (hword.includes(hletter)&& !uletters.includes(hletter) && hletter.length == 1){
