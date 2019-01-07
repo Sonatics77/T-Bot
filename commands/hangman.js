@@ -2,13 +2,13 @@ const Discord = require("discord.js");
 var randomWord = require('random-words');
 
 module.exports.run = async (Bot, message, args) => {
-  let hword = (randomWord());
+  var hword = (randomWord());
   var hHang = ["――――", "|/              |", "|                ", "|                ", "|                ", "|\\"];
   let hChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
   hChannel.send(hword);
   var incorrect = 0;
   var hsword = [];
-  let uletters = [];
+  var uletters = [];
   var dmsg = ""
   for (var i = 0; i < hword.length; i++) {
     hsword.push("██");
