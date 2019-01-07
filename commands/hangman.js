@@ -26,7 +26,7 @@ module.exports.run = async (Bot, message, args) => {
       var lmsg = hChannel.lastMessageID;
       //var ldel = 0
     const msgs = await hChannel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
-    console.log(msg.map(msg =. msg.author.id));
+    console.log(msg.map(msg = msg.author.id));
     //awaits for response "hm letter"
     var l1msg = hChannel.lastMessageID;
     //console.log(l1msg);
