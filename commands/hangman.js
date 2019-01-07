@@ -107,6 +107,7 @@ module.exports.run = async (Bot, message, args) => {
   }
   hChannel.fetchMessage(lmsg).then(async dlmsg => {
     dlmsg.delete();
+  })
   var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`, `Incorrect: ${hincorrect.join("")}`];
     await hChannel.send(send1Arr);
     return hChannel.send("Good job, you won!");
