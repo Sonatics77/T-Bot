@@ -30,10 +30,7 @@ module.exports.run = async (Bot, message, args) => {
     var l1msg = hChannel.lastMessageID;
     //console.log(l1msg);
     //console.log(lmsg);
-    hChannel.fetchMessage(l1msg).then(async dl1msg => {
-       await dl1msg.delete();
-
-    })
+//DELETE RESPONSE HERE
     //deletes response
     // TRY SEDNING UPDATE AT TOP
     if(! msgs){
@@ -104,6 +101,10 @@ module.exports.run = async (Bot, message, args) => {
       //}
       //edits last message to updated
     }
+    hChannel.fetchMessage(l1msg).then(async dl1msg => {
+       await dl1msg.delete();
+
+    })
     hChannel.fetchMessage(lmsg).then(async dlmsg => {
       dlmsg.delete();
     })
@@ -134,7 +135,9 @@ function hang5() {
 function hang6() {
   hHang[4] = "|               / \\";
 }
-
+function toLowerC() {
+  let
+}
 }
 
 
