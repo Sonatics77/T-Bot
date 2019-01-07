@@ -19,7 +19,7 @@ module.exports.run = async (Bot, message, args) => {
   //var lmsg = hChannel.lastMessageID;
   //var ldel = 0
   while(hsword.includes("██")){
-    let send1Arr = [`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`${hHang[6]}`,`Unknown: ${hsword.join(" ")}`,`Used: `];
+    let send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`${hHang[6]}`,`Unknown: ${hsword.join(" ")}`,`Used: `];
       await hChannel.send(send1Arr);
       // send(drawfunction(how many wrong(AS ARRAY)))
       var lmsg = hChannel.lastMessageID;
