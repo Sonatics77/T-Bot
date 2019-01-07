@@ -3,6 +3,7 @@ var randomWord = require('random-words');
 
 module.exports.run = async (Bot, message, args) => {
   var hword = (randomWord());
+  var hincorrect = [];
   var hHang = ["――――", "|/              |", "|                ", "|                ", "|                ", "|\\"];
   let hChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
   //hChannel.send(hword);
@@ -19,7 +20,7 @@ module.exports.run = async (Bot, message, args) => {
   //var lmsg = hChannel.lastMessageID;
   //var ldel = 0
   while(hsword.includes("██")){
-    var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
+    var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`, `Incorrect: ${hincorrect}`];
       await hChannel.send(send1Arr);
       // send(drawfunction(how many wrong(AS ARRAY)))
       var lmsg = hChannel.lastMessageID;
@@ -54,6 +55,7 @@ module.exports.run = async (Bot, message, args) => {
       } else {
         uletters.push(hletter);
         if (! hword.includes(hletter)){
+          hincorrect.push(hletter);
           incorrect = incorrect+1;
           if (incorrect == 1) {
             hang1();
@@ -72,9 +74,9 @@ module.exports.run = async (Bot, message, args) => {
           }
           if (incorrect == 6) {
             hang6();
-            var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
+            var send1Arr = [`${hHang[0]}`,`${hHang[1]}`,`${hHang[2]}`,`${hHang[3]}`,`${hHang[4]}`,`${hHang[5]}`,`Word: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`, `Incorrect: ${hincorrect}`];
               await hChannel.send(send1Arr);
-              return hChannel.send("You lost ㄴㅆㅅㅁ");
+              return hChannel.send(`You lost ㄴㅆㅅㅁ, the word was ${hword}.`);
           }
         }
       }
