@@ -3,8 +3,10 @@ var randomWord = require('random-words');
 
 module.exports.run = async (Bot, message, args) => {
   let hword = (randomWord());
+  let hHang = ["______", "|/   |", "|    ", "|   ", "|   ", "|\\"];
   let hChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
   hChannel.send(hword);
+  hChannel.send(hHang);
   var hsword = [];
   let uletters = [];
   var dmsg = ""
@@ -19,6 +21,7 @@ module.exports.run = async (Bot, message, args) => {
   while(hsword.includes("██")){
     let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
       await hChannel.send(send1Arr);
+      // send(drawfunction(how many wrong(AS ARRAY)))
       var lmsg = hChannel.lastMessageID;
       //var ldel = 0
     const msgs = await hChannel.awaitMessages(msg => msg.content.includes("hm"), {maxMatches: 1});
@@ -90,6 +93,6 @@ module.exports.help = {
  //______
 // |/   |
  //|    O
- //|   /|\
- //|   / \
-///|\
+ //|   /|\\
+ //|   / \\
+///|\\
