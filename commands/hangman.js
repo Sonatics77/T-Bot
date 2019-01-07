@@ -3,7 +3,7 @@ var randomWord = require('random-words');
 
 module.exports.run = async (Bot, message, args) => {
   let hword = (randomWord());
-  let hHang = ["――――", "|/               |", "|            ", "|         ", "|   ", "|\\"];
+  let hHang = ["――――", "|/               |", "|            |", "|         |", "|   ", "|\\―――"];
   let hChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
   hChannel.send(hword);
   hChannel.send(hHang);
