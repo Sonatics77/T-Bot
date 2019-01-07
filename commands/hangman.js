@@ -96,9 +96,6 @@ module.exports.run = async (Bot, message, args) => {
   }
 //catch(console.log(err));
 
-}
-
-
 function hang1() {
   hHang[2] = "|                O";
 }
@@ -117,6 +114,9 @@ function hang5() {
 function hang6() {
   hHang[4] = "|               / \\";
 }
+
+}
+
 
 
 
