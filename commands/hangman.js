@@ -6,10 +6,7 @@ module.exports.run = async (Bot, message, args) => {
   let hHang = ["――――", "|/              |", "|                ", "|                ", "|                ", "|\\"];
   let hChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
   hChannel.send(hword);
-  hChannel.send(hHang);
-  let test = 1;
-  `hang${test}`();
-  hChannel.send(hHang);
+  var incorrect = 0;
   var hsword = [];
   let uletters = [];
   var dmsg = ""
@@ -22,7 +19,7 @@ module.exports.run = async (Bot, message, args) => {
   //var lmsg = hChannel.lastMessageID;
   //var ldel = 0
   while(hsword.includes("██")){
-    let send1Arr = [`Unknown: ${hsword.join(" ")}`,`Used: `];
+    let send1Arr = [`${hHang}`,`Unknown: ${hsword.join(" ")}`,`Used: `];
       await hChannel.send(send1Arr);
       // send(drawfunction(how many wrong(AS ARRAY)))
       var lmsg = hChannel.lastMessageID;
@@ -54,9 +51,29 @@ module.exports.run = async (Bot, message, args) => {
           hsword[indices[i3]] = hletter;
         }
 
-      } //else {
-
-      //}
+      } else {
+        if (! hword.includes(hletter)){
+          incorrect = incorrect+1;
+          if (incorrect == 1) {
+            hang1();
+          }
+          if (incorrect == 2) {
+            hang2();
+          }
+          if (incorrect == 3) {
+            hang3();
+          }
+          if (incorrect == 4) {
+            hang4();
+          }
+          if (incorrect == 5) {
+            hang5();
+          }
+          if (incorrect == 6) {
+            hang6();
+          }
+        }
+      }
       let sendArr = [`Unknown: ${hsword.join(" ")}`,`Used: ${uletters.join("")}`];
 //      if (ldel == 0) {
     //  \  lmsg = hChannel.lastMessageID;
