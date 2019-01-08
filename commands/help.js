@@ -11,7 +11,7 @@ module.exports.run = async (Bot, message, args) => {
   .addField("Moderation", "t.report @user reason, t.ban @user, t.kick @user, t.tempmute @user 1m, t.unmute @user, t.addrole role, t.removerole role")
   .addField("Info", "t.serverinfo, t.botinfo")
   .addField("Games", "t.hangman")
-  .addField("Announcements", "t.announce #channel \"text\"")
+  .addField("Announcements", "t.announce #channel \"text\" \"text\"")
   .addField("Other", "t.cat, t.embed \"colour (or hex code)\", t.choose option1 option 2... etc");
 
   message.channel.send(eHelp);
