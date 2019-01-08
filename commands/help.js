@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (Bot, message, args) => {
 
-  let boticon = bot.user.displayAvatarURL
+  let boticon = Bot.user.displayAvatarURL
   let eHelp = new Discord.RichEmbed()
   .setTitle("TaskieBot Commands")
   .setThumbnail(boticon)
