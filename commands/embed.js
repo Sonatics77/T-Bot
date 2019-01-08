@@ -7,10 +7,11 @@ module.exports.run = async (Bot, message, args) => {
     let emText = message.content.slice(7).split(" ");
     let emColour = `${emText.splice(0,2)}`;
     let eColour = `${emColour.slice(1)}`;
-    let hexcheck = eColour.slice(0,0);
+    let hexcheck = eColour.slice(0,1);
     let colourPos = colourName.indexOf(eColour);
     var eText = emText.join(" ");
     var eHex = 0
+      message.delete();
     if (colourPos == -1) {
       if (hexcheck == "#") {
         eHex = eColour;
@@ -26,7 +27,7 @@ module.exports.run = async (Bot, message, args) => {
 
     let authText = [embedAuth,": ",eText];
     eText = authText.join("");
-    message.delete();
+
 
     let responseEmbed = new Discord.RichEmbed()
     .setDescription(eText)
