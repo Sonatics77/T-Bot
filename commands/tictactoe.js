@@ -10,7 +10,7 @@ module.exports.run = async (Bot, message, args) => {
   console.log(userB);
   let tChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
   await tChannel.send(`Waiting for ${tArgs[1]}`);
-  const msgs = await hChannel.awaitMessages(msg => msg.author.id == userB, {maxMatches: 1});
+  const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {maxMatches: 1});
   await tChannel.send("works");
 
 
