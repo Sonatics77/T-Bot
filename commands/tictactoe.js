@@ -46,8 +46,18 @@ module.exports.run = async (Bot, message, args) => {
   var fin = 0;
   console.log(xORo);
   while(fin == 0){
-    xORo = (xORo+1)-(xORo*2);
-
+    xORo = (xORo+1)-(xORo*2);//switches user
+    if(xORo == 1){
+      await tChannel.send(`${message.author}'s turn'`);
+      var tdel = tChannel.lastMessageID;
+    } else {
+      await tChannel.send(`${tArgs[1]}'s turn`);
+      var tdel = tChannel.lastMessageID;
+    }//displays whose turn
+    console.log(tdel);
+    tChannel.fetchMessage(tdel).then(async (tmsg) => {
+      tmsg.delete();
+    })
     console.log(xORo);
     getuId();
     console.log(uxORo);
@@ -55,6 +65,7 @@ module.exports.run = async (Bot, message, args) => {
     //tChannel.send("works");
     //console.log(xORo);
     var rdel = tChannel.lastMessageID;
+    console.log(rdel);
     tChannel.fetchMessage(rdel).then(async rmsg => {
       await rmsg.delete();
     })
@@ -80,7 +91,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row1[1] == ":white_large_square:") {
             row1[1] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input");
+            return tChannel.send("Invalid input, game ended");
           }
         }
       }
@@ -89,7 +100,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row1[2] == ":white_large_square:") {
             row1[2] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input");
+            return tChannel.send("Invalid input, game ended");
           }
         }
       }
@@ -98,7 +109,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row1[3] == ":white_large_square:") {
             row1[3] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input");
+            return tChannel.send("Invalid input, game ended");
           }
         }
       }
@@ -107,7 +118,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row2[1] == ":white_large_square:") {
             row2[1] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input");
+            return tChannel.send("Invalid input, game ended");
           }
         }
       }
@@ -116,7 +127,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row2[2] == ":white_large_square:") {
             row2[2] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input");
+            return tChannel.send("Invalid input, game ended");
           }
         }
       }
@@ -125,7 +136,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row2[3] == ":white_large_square:") {
             row2[3] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input");
+            return tChannel.send("Invalid input, game ended");
           }
         }
       }
@@ -134,7 +145,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row3[1] == ":white_large_square:") {
             row3[1] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input");
+            return tChannel.send("Invalid input, game ended");
           }
         }
       }
@@ -143,7 +154,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row3[2] == ":white_large_square:") {
             row3[2] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input");
+            return tChannel.send("Invalid input, game ended");
           }
         }
       }
@@ -152,7 +163,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row3[3] == ":white_large_square:") {
             row3[3] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input");
+            return tChannel.send("Invalid input, game ended");
           }
         }
       }
