@@ -55,9 +55,7 @@ module.exports.run = async (Bot, message, args) => {
       var tdel = tChannel.lastMessageID;
     }//displays whose turn
     console.log(tdel);
-    tChannel.fetchMessage(tdel).then(async (tmsg) => {
-      tmsg.delete();
-    })
+
     console.log(xORo);
     getuId();
     console.log(uxORo);
@@ -83,6 +81,9 @@ module.exports.run = async (Bot, message, args) => {
     tChannel.fetchMessage(boardID).then(async emsg => {
       await emsg.edit(tBoard);
     ;})
+    tChannel.fetchMessage(tdel).then(async (tmsg) => {
+      tmsg.delete();
+    })
 
     }
     function tic(symbol) {
