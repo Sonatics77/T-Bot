@@ -22,10 +22,10 @@ module.exports.run = async (Bot, message, args) => {
   var userA = message.author.id;
   var user2B = tArgs[1]
   var userB = user2B.slice(2,tArgs[1].length-1);
-  console.log(userA);
-  console.log(userB);
+//  console.log(userA);
+  //console.log(userB);
   var tChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
-  console.log(boardID);
+  //console.log(boardID);
   await tChannel.send(`Waiting for ${tArgs[1]} to reply with \"yes\"...`);
   const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {maxMatches: 1});
   tChannel.send("Starting tic tac toe game...");
@@ -65,6 +65,8 @@ module.exports.run = async (Bot, message, args) => {
         tic("x");
       }
     }
+    console.log(rLetter);
+    console.log(rNumber);
     updateBoard();
     tChannel.fetchMessage(boardID).then(async emsg => {
       await emsg.edit(tBoard);
