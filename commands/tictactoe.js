@@ -17,7 +17,7 @@ module.exports.run = async (Bot, message, args) => {
   await tChannel.send(`Waiting for ${tArgs[1]} to reply with \"yes\"...`);
   const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {maxMatches: 1});
   tChannel.send("Starting tic tac toe game...");
-  var fin? = 0;
+  var fin = 0;
   while(fin == 0){
     const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {maxMatches: 1});
   }
