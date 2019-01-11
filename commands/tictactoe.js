@@ -4,7 +4,8 @@ module.exports.run = async (Bot, message, args) => {
 
   let tArgs = message.content.trim().split(" ");
   let userA = message.author.id;
-  let userB = tArgs[1].slice(3,tArgs[1].length-1);
+  let user2B = tArgs[1]
+  let userB = user2B.slice(3,tArgs[1].length-1);
   console.log(userA);
   console.log(userB);
   let tChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
