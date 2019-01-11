@@ -37,11 +37,11 @@ Bot.on("message", async message => {
 
   let prefix = "t.";
   console.log(message.content.slice(0,prefix.length));
-  if(message.content.slice(0,prefix.length) == prefix){
+  if(message.content.slice(0,prefix.length).trim() == prefix){
   let messageArray = message.content.split(" ");
-  console.lod(messageArray);
+  console.log(messageArray);
   let cmd = messageArray[0];
-  console.lod(cmd);
+  console.log(cmd);
   let args = messageArray.slice(2);
 
 
