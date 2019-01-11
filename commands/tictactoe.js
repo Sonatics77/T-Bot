@@ -53,8 +53,6 @@ module.exports.run = async (Bot, message, args) => {
     var rNumber = awaitR.slice(1,2);
     tic("x");
     updateBoard();
-    tChannel.send(rNumber);
-    tChannel.send(rLetter);
     tChannel.fetchMessage(boardID).then(async emsg => {
       await emsg.edit(tBoard);
     ;})
@@ -62,47 +60,47 @@ module.exports.run = async (Bot, message, args) => {
     }
     function tic(symbol) {
       if (rNumber == "1"){
-        if (rLetter == "a"){
+        if (rLetter == "a" || rLetter == "A"){
             row1[1] = `:${symbol}:`;
         }
       }
       if (rNumber == "1"){
-        if (rLetter == "b"){
+        if (rLetter == "b" || rLetter == "B"){
             row1[2] = `:${symbol}:`;
         }
       }
       if (rNumber == "1"){
-        if (rLetter == "c"){
+        if (rLetter == "c" || rLetter == "C"){
             row1[3] = `:${symbol}:`;
         }
       }
       if (rNumber == "2"){
-        if (rLetter == "a"){
+        if (rLetter == "a" || rLetter == "A"){
             row2[1] = `:${symbol}:`;
         }
       }
       if (rNumber == "1"){
-        if (rLetter == "b"){
+        if (rLetter == "b" || rLetter == "B"){
             row2[2] = `:${symbol}:`;
         }
       }
       if (rNumber == "1"){
-        if (rLetter == "c"){
+        if (rLetter == "c" || rLetter == "C"){
             row2[3] = `:${symbol}:`;
         }
       }
       if (rNumber == "3"){
-        if (rLetter == "a"){
+        if (rLetter == "a" || rLetter == "A"){
             row3[1] = `:${symbol}:`;
         }
       }
       if (rNumber == "1"){
-        if (rLetter == "b"){
+        if (rLetter == "b" || rLetter == "B"){
             row3[2] = `:${symbol}:`;
         }
       }
       if (rNumber == "1"){
-        if (rLetter == "c"){
+        if (rLetter == "c" || rLetter == "C"){
             row3[3] = `:${symbol}:`;
         }
       }
