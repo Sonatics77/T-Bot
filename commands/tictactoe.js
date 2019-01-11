@@ -57,7 +57,7 @@ module.exports.run = async (Bot, message, args) => {
       await emsg.edit(tBoard);
     ;})
 
-    })
+    }
   }
   function tic(symbol) {
     if (rNumber == "1"){
