@@ -36,12 +36,9 @@ Bot.on("message", async message => {
   if(message.channel.type === "dm") return;
 
   let prefix = "t.";
-  console.log(message.content.slice(0,prefix.length));
   if(message.content.slice(0,prefix.length).trim() == prefix){
   let messageArray = message.content.split(" ");
-  console.log(messageArray);
   let cmd = messageArray[0];
-  console.log(cmd);
   let args = messageArray.slice(2);
 
 
