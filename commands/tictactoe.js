@@ -112,7 +112,7 @@ module.exports.run = async (Bot, message, args) => {
     bRow1 = row1.join(" ");
     tBoard = [bRow3,bRow2,bRow1,":black_large_square: :regional_indicator_a: :regional_indicator_b: :regional_indicator_c:"];
   }
-  }
+
 
 
   module.exports.help = {
