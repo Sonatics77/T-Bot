@@ -36,6 +36,7 @@ Bot.on("message", async message => {
   if(message.channel.type === "dm") return;
 
   let prefix = "t.";
+  console.log(message.content.slice(prefix.length));
   if(message.content.slice(prefix.length) == prefix){
   let messageArray = message.content.split(" ");
   console.lod(messageArray);
