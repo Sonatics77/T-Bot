@@ -16,6 +16,7 @@ module.exports.run = async (Bot, message, args) => {
   , integer: true
   }
   var xORo = rn(options);
+  var uxORo = "";
   var tUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(! tUser) return message.channel.send("Can't find user!");
   var tArgs = message.content.trim().split(" ");
@@ -30,10 +31,10 @@ module.exports.run = async (Bot, message, args) => {
   const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {maxMatches: 1});
   tChannel.send("Starting tic tac toe game...");
   if(xORo == 0){
-    xORo = userA
+    uxORo = userA
     await tChannel.send(`${message.author} is starting as :x: !`);
   } else {
-    xORo = userB
+    uxORo = userB
     await tChannel.send(`${tArgs[1]} is starting as :o: !`);
   }
   await tChannel.send(tBoard);
