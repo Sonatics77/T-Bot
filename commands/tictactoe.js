@@ -54,6 +54,10 @@ module.exports.run = async (Bot, message, args) => {
     const msgs = await tChannel.awaitMessages(msg => msg.author.id == uxORo, {maxMatches: 1});
     //tChannel.send("works");
     //console.log(xORo);
+    var rdel = tChannel.lastMessageID;
+    tChannel.fetchMessage(rdel).then(async rmsg => {
+      await rmsg.delete();
+    })
     var awaitR = `${msgs.map(msg => msg.content)}`
     var rLetter = awaitR.slice(0,1);
     var rNumber = awaitR.slice(1,2);
@@ -73,47 +77,83 @@ module.exports.run = async (Bot, message, args) => {
     function tic(symbol) {
       if (rNumber == "1"){
         if (rLetter == "a" || rLetter == "A"){
+          if (row1[1] == ":white_large_square:") {
             row1[1] = `:${symbol}:`;
+          } else {
+            return tChannel.send("Invalid input");
+          }
         }
       }
       if (rNumber == "1"){
         if (rLetter == "b" || rLetter == "B"){
+          if (row1[2] == ":white_large_square:") {
             row1[2] = `:${symbol}:`;
+          } else {
+            return tChannel.send("Invalid input");
+          }
         }
       }
       if (rNumber == "1"){
         if (rLetter == "c" || rLetter == "C"){
+          if (row1[3] == ":white_large_square:") {
             row1[3] = `:${symbol}:`;
+          } else {
+            return tChannel.send("Invalid input");
+          }
         }
       }
       if (rNumber == "2"){
         if (rLetter == "a" || rLetter == "A"){
+          if (row2[1] == ":white_large_square:") {
             row2[1] = `:${symbol}:`;
+          } else {
+            return tChannel.send("Invalid input");
+          }
         }
       }
       if (rNumber == "2"){
         if (rLetter == "b" || rLetter == "B"){
+          if (row2[2] == ":white_large_square:") {
             row2[2] = `:${symbol}:`;
+          } else {
+            return tChannel.send("Invalid input");
+          }
         }
       }
       if (rNumber == "2"){
         if (rLetter == "c" || rLetter == "C"){
+          if (row2[3] == ":white_large_square:") {
             row2[3] = `:${symbol}:`;
+          } else {
+            return tChannel.send("Invalid input");
+          }
         }
       }
       if (rNumber == "3"){
         if (rLetter == "a" || rLetter == "A"){
+          if (row3[1] == ":white_large_square:") {
             row3[1] = `:${symbol}:`;
+          } else {
+            return tChannel.send("Invalid input");
+          }
         }
       }
       if (rNumber == "3"){
         if (rLetter == "b" || rLetter == "B"){
+          if (row3[2] == ":white_large_square:") {
             row3[2] = `:${symbol}:`;
+          } else {
+            return tChannel.send("Invalid input");
+          }
         }
       }
       if (rNumber == "3"){
         if (rLetter == "c" || rLetter == "C"){
+          if (row3[3] == ":white_large_square:") {
             row3[3] = `:${symbol}:`;
+          } else {
+            return tChannel.send("Invalid input");
+          }
         }
       }
     }
