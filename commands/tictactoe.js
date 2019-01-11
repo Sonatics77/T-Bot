@@ -92,7 +92,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row1[1] == ":white_large_square:") {
             row1[1] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input, game ended");
+            return message.channel.send("Invalid input, game ended");
           }
         }
       }
@@ -101,7 +101,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row1[2] == ":white_large_square:") {
             row1[2] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input, game ended");
+            return message.channel.send("Invalid input, game ended");
           }
         }
       }
@@ -110,7 +110,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row1[3] == ":white_large_square:") {
             row1[3] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input, game ended");
+            return message.channel.send("Invalid input, game ended");
           }
         }
       }
@@ -119,7 +119,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row2[1] == ":white_large_square:") {
             row2[1] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input, game ended");
+            return message.channel.send("Invalid input, game ended");
           }
         }
       }
@@ -128,7 +128,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row2[2] == ":white_large_square:") {
             row2[2] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input, game ended");
+            return message.channel.send("Invalid input, game ended");
           }
         }
       }
@@ -137,7 +137,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row2[3] == ":white_large_square:") {
             row2[3] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input, game ended");
+            return message.channel.send("Invalid input, game ended");
           }
         }
       }
@@ -146,7 +146,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row3[1] == ":white_large_square:") {
             row3[1] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input, game ended");
+            return message.channel.send("Invalid input, game ended");
           }
         }
       }
@@ -155,7 +155,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row3[2] == ":white_large_square:") {
             row3[2] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input, game ended");
+            return message.channel.send("Invalid input, game ended");
           }
         }
       }
@@ -164,7 +164,7 @@ module.exports.run = async (Bot, message, args) => {
           if (row3[3] == ":white_large_square:") {
             row3[3] = `:${symbol}:`;
           } else {
-            return tChannel.send("Invalid input, game ended");
+            return message.channel.send("Invalid input, game ended");
           }
         }
       }
