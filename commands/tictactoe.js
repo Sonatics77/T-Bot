@@ -53,7 +53,7 @@ module.exports.run = async (Bot, message, args) => {
       }
     }
     console.log(xORo);
-    const msgs = await tChannel.awaitMessages(msg => msg.author.id == xORo, {maxMatches: 1});
+    const msgs = await tChannel.awaitMessages(msg => msg.author.id == uxORo, {maxMatches: 1});
     //tChannel.send("works");
     console.log(xORo);
     var awaitR = `${msgs.map(msg => msg.content)}`
