@@ -21,7 +21,9 @@ module.exports.run = async (Bot, message, args) => {
   if(! tUser) return message.channel.send("Can't find user!");
   var tArgs = message.content.trim().split(" ");
   var userA = message.author.id;
+  console.log(tArgs)l
   var user2B = tArgs[1].split("!");
+  console.log(user2B);
   var userB = user2B[1].slice(0,user2B[1].length-1);//user2B.slice(2,tArgs[1].length-1);
   console.log(userA);
   console.log(userB);
