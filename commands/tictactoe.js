@@ -50,7 +50,7 @@ module.exports.run = async (Bot, message, args) => {
     console.log(xORo);
     var awaitR = `${msgs.map(msg => msg.content)}`
     var rLetter = awaitR.slice(0,1);
-    var rNumber = awaitR.slice(2,2);
+    var rNumber = awaitR.slice(1,2);
     tic("x");
     updateBoard();
     tChannel.send(rNumber);
