@@ -36,15 +36,17 @@ Bot.on("message", async message => {
   if(message.channel.type === "dm") return;
 
   let prefix = "t.";
+  if(message.content.slice(prefix.length) == prefix){
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
-  let args = messageArray.slice(1);
+  let args = messageArray.slice(2);
 
 
   let commandfile = Bot.commands.get(cmd.slice(prefix.length));
   console.log(commandfile);
   if(commandfile) commandfile.run(Bot,message,args);
-});
+})
+};
 
 
 //integrate with ubb: when item is bought give user a permissions role named: activate item then get them to activate the item by typing t.use "item"
