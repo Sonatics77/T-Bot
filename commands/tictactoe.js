@@ -44,7 +44,13 @@ module.exports.run = async (Bot, message, args) => {
   //;})
   var fin = 0;
   while(fin == 0){
-
+    if (xORo == 0){
+      xORo = 1;
+    } else{
+      if (xORo == 1) {
+        xORo = 0;
+      }
+    }
     const msgs = await tChannel.awaitMessages(msg => msg.author.id == xORo, {maxMatches: 1});
     //tChannel.send("works");
     console.log(xORo);
