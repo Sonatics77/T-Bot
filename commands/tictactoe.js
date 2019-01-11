@@ -53,6 +53,7 @@ module.exports.run = async (Bot, message, args) => {
     var rNumber = awaitR.slice(2,2);
     tic("x");
     updateBoard();
+    tChannel.send(row1);
     tChannel.fetchMessage(boardID).then(async emsg => {
       await emsg.edit(tBoard);
     ;})
