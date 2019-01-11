@@ -25,7 +25,7 @@ module.exports.run = async (Bot, message, args) => {
   console.log(userA);
   console.log(userB);
   var tChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
-  tChannel.send(tBoard);
+  await tChannel.send(tBoard);
   var boardID = tChannel.lastMessageID; //boardID
   console.log(boardID);
   await tChannel.send(`Waiting for ${tArgs[1]} to reply with \"yes\"...`);
