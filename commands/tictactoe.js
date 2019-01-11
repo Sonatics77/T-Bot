@@ -27,6 +27,7 @@ module.exports.run = async (Bot, message, args) => {
   var tChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
   tChannel.send(tBoard);
   var boardID = tChannel.lastMessageID; //boardID
+  console.log(boardID);
   await tChannel.send(`Waiting for ${tArgs[1]} to reply with \"yes\"...`);
   const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {maxMatches: 1});
   tChannel.send("Starting tic tac toe game...");
