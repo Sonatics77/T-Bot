@@ -1,9 +1,16 @@
 const Discord = require("discord.js");
+var rn = require('random-number');
+
 
 module.exports.run = async (Bot, message, args) => {
 
   var tBoard = [":three: :white_large_square: :white_large_square: :white_large_square:", ":two: :white_large_square: :white_large_square: :white_large_square:", ":one: :white_large_square: :white_large_square: :white_large_square:", ":black_large_square: :regional_indicator_a: :regional_indicator_b: :regional_indicator_c:"];
-
+  var options = {
+    min:  0
+  , max:  1
+  , integer: true
+  }
+  var xORo = rn(options);
   var tUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(! tUser) return message.channel.send("Can't find user!");
   var tArgs = message.content.trim().split(" ");
@@ -19,7 +26,18 @@ module.exports.run = async (Bot, message, args) => {
   tChannel.send("Starting tic tac toe game...");
   var fin = 0;
   while(fin == 0){
-    const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {maxMatches: 1});
+    if(xORo == 0){
+      xORo = userA
+      await tChannel.send(`${message.content.author} is starting as :x: !`);
+    } else {
+      xORo = userB
+      await tChannel.send(`${tArgs[1]} is starting as :o: !`);
+    }
+
+    const msgs = await tChannel.awaitMessages(msg => msg.author.id == xORo, {maxMatches: 1});
+    tChannel.send("works");
+    console.log(xORo);
+    var awaitR = `${msgs.map(msg => msg.content)}`
   }
   }
 
