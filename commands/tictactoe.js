@@ -7,7 +7,8 @@ module.exports.run = async (Bot, message, args) => {
   let userB = tArgs[1];
   console.log(userA);
   console.log(userB);
-  
+  console.log(tArgs);
+
   }
 
 
