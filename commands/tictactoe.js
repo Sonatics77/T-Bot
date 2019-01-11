@@ -22,9 +22,9 @@ module.exports.run = async (Bot, message, args) => {
   var tArgs = message.content.trim().split(" ");
   var userA = message.author.id;
   console.log(tArgs);
-  var user2B = tArgs[1].split("!");
-  console.log(user2B);
-  var userB = user2B[1].slice(0,user2B[1].length-1);//user2B.slice(2,tArgs[1].length-1);
+  //var user2B = tArgs[1].split("!");
+  //console.log(user2B);
+  var userB = message.mentions.users.first().id; //user2B[1].slice(0,user2B[1].length-1);//user2B.slice(2,tArgs[1].length-1);
   console.log(userA);
   console.log(userB);
   var tChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
