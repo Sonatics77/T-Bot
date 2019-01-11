@@ -31,5 +31,6 @@ module.exports.run = async (Bot, message, args) => {
   :white_large_square: :white_large_square: :white_large_square:
   :white_large_square: :white_large_square: :white_large_square:
   :white_large_square: :white_large_square: :white_large_square:
+  :x: :o:
 
 */
