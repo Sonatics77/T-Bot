@@ -44,18 +44,14 @@ module.exports.run = async (Bot, message, args) => {
   //  await emsg.edit("test");
   //;})
   var fin = 0;
+  console.log(xORo);
   while(fin == 0){
-    if (xORo == 0){
-      xORo = 1;
-    } else{
-      if (xORo == 1) {
-        xORo = 0;
-      }
-    }
+    xORo = (xORo+1)-(xORo*2);
+
     console.log(xORo);
     const msgs = await tChannel.awaitMessages(msg => msg.author.id == uxORo, {maxMatches: 1});
     //tChannel.send("works");
-    console.log(xORo);
+    //console.log(xORo);
     var awaitR = `${msgs.map(msg => msg.content)}`
     var rLetter = awaitR.slice(0,1);
     var rNumber = awaitR.slice(1,2);
@@ -66,8 +62,8 @@ module.exports.run = async (Bot, message, args) => {
         tic("x");
       }
     }
-    console.log(rLetter);
-    console.log(rNumber);
+    //console.log(rLetter);
+    //console.log(rNumber);
     updateBoard();
     tChannel.fetchMessage(boardID).then(async emsg => {
       await emsg.edit(tBoard);
@@ -126,6 +122,13 @@ module.exports.run = async (Bot, message, args) => {
       bRow2 = row2.join(" ");
       bRow1 = row1.join(" ");
       tBoard = [bRow3,bRow2,bRow1,":black_large_square: :regional_indicator_a: :regional_indicator_b: :regional_indicator_c:"];
+    }
+    function getuId() {
+      if(xORo == 0){
+        uxORo = userA
+      } else {
+        uxORo = userB
+      }
     }
 
   }
