@@ -62,47 +62,47 @@ module.exports.run = async (Bot, message, args) => {
     }
     function tic(symbol) {
       if (rNumber == "1"){
-        if (rLetter == "A"){
+        if (rLetter == "a"){
             row1[1] = `:${symbol}:`;
         }
       }
       if (rNumber == "1"){
-        if (rLetter == "B"){
+        if (rLetter == "b"){
             row1[2] = `:${symbol}:`;
         }
       }
       if (rNumber == "1"){
-        if (rLetter == "C"){
+        if (rLetter == "c"){
             row1[3] = `:${symbol}:`;
         }
       }
       if (rNumber == "2"){
-        if (rLetter == "A"){
+        if (rLetter == "a"){
             row2[1] = `:${symbol}:`;
         }
       }
       if (rNumber == "1"){
-        if (rLetter == "B"){
+        if (rLetter == "b"){
             row2[2] = `:${symbol}:`;
         }
       }
       if (rNumber == "1"){
-        if (rLetter == "C"){
+        if (rLetter == "c"){
             row2[3] = `:${symbol}:`;
         }
       }
       if (rNumber == "3"){
-        if (rLetter == "A"){
+        if (rLetter == "a"){
             row3[1] = `:${symbol}:`;
         }
       }
       if (rNumber == "1"){
-        if (rLetter == "B"){
+        if (rLetter == "b"){
             row3[2] = `:${symbol}:`;
         }
       }
       if (rNumber == "1"){
-        if (rLetter == "C"){
+        if (rLetter == "c"){
             row3[3] = `:${symbol}:`;
         }
       }
