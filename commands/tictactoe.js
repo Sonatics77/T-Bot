@@ -27,8 +27,10 @@ module.exports.run = async (Bot, message, args) => {
   module.exports.help = {
     name: "ttt"
   }
-    |    |
-__|__|__
-    |    |
-__|__|__
-    |    |
+/*
+  |    |
+  __|__|__
+  |    |
+  __|__|__
+  |    |
+*/
