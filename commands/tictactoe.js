@@ -58,59 +58,60 @@ module.exports.run = async (Bot, message, args) => {
     ;})
 
     }
-  }
-  function tic(symbol) {
-    if (rNumber == "1"){
-      if (rLetter == "A"){
-          row1[1] = `:${symbol}:`;
+    function tic(symbol) {
+      if (rNumber == "1"){
+        if (rLetter == "A"){
+            row1[1] = `:${symbol}:`;
+        }
+      }
+      if (rNumber == "1"){
+        if (rLetter == "B"){
+            row1[2] = `:${symbol}:`;
+        }
+      }
+      if (rNumber == "1"){
+        if (rLetter == "C"){
+            row1[3] = `:${symbol}:`;
+        }
+      }
+      if (rNumber == "2"){
+        if (rLetter == "A"){
+            row2[1] = `:${symbol}:`;
+        }
+      }
+      if (rNumber == "1"){
+        if (rLetter == "B"){
+            row2[2] = `:${symbol}:`;
+        }
+      }
+      if (rNumber == "1"){
+        if (rLetter == "C"){
+            row2[3] = `:${symbol}:`;
+        }
+      }
+      if (rNumber == "3"){
+        if (rLetter == "A"){
+            row3[1] = `:${symbol}:`;
+        }
+      }
+      if (rNumber == "1"){
+        if (rLetter == "B"){
+            row3[2] = `:${symbol}:`;
+        }
+      }
+      if (rNumber == "1"){
+        if (rLetter == "C"){
+            row3[3] = `:${symbol}:`;
+        }
       }
     }
-    if (rNumber == "1"){
-      if (rLetter == "B"){
-          row1[2] = `:${symbol}:`;
-      }
+    function updateBoard() {
+      bRow3 = row3.join(" ");
+      bRow2 = row2.join(" ");
+      bRow1 = row1.join(" ");
+      tBoard = [bRow3,bRow2,bRow1,":black_large_square: :regional_indicator_a: :regional_indicator_b: :regional_indicator_c:"];
     }
-    if (rNumber == "1"){
-      if (rLetter == "C"){
-          row1[3] = `:${symbol}:`;
-      }
-    }
-    if (rNumber == "2"){
-      if (rLetter == "A"){
-          row2[1] = `:${symbol}:`;
-      }
-    }
-    if (rNumber == "1"){
-      if (rLetter == "B"){
-          row2[2] = `:${symbol}:`;
-      }
-    }
-    if (rNumber == "1"){
-      if (rLetter == "C"){
-          row2[3] = `:${symbol}:`;
-      }
-    }
-    if (rNumber == "3"){
-      if (rLetter == "A"){
-          row3[1] = `:${symbol}:`;
-      }
-    }
-    if (rNumber == "1"){
-      if (rLetter == "B"){
-          row3[2] = `:${symbol}:`;
-      }
-    }
-    if (rNumber == "1"){
-      if (rLetter == "C"){
-          row3[3] = `:${symbol}:`;
-      }
-    }
-  }
-  function updateBoard() {
-    bRow3 = row3.join(" ");
-    bRow2 = row2.join(" ");
-    bRow1 = row1.join(" ");
-    tBoard = [bRow3,bRow2,bRow1,":black_large_square: :regional_indicator_a: :regional_indicator_b: :regional_indicator_c:"];
+
   }
 
 
