@@ -25,8 +25,6 @@ module.exports.run = async (Bot, message, args) => {
   console.log(userA);
   console.log(userB);
   var tChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
-  await tChannel.send(tBoard);
-  var boardID = tChannel.lastMessageID; //boardID
   console.log(boardID);
   await tChannel.send(`Waiting for ${tArgs[1]} to reply with \"yes\"...`);
   const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {maxMatches: 1});
@@ -38,16 +36,81 @@ module.exports.run = async (Bot, message, args) => {
     xORo = userB
     await tChannel.send(`${tArgs[1]} is starting as :o: !`);
   }
-  tChannel.fetchMessage(boardID).then(async emsg => {
-    await emsg.edit("test");
-  })
+  await tChannel.send(tBoard);
+  var boardID = tChannel.lastMessageID; //boardID
+
+  //tChannel.fetchMessage(boardID).then(async emsg => {
+  //  await emsg.edit("test");
+  //;})
   var fin = 0;
   while(fin == 0){
 
     const msgs = await tChannel.awaitMessages(msg => msg.author.id == xORo, {maxMatches: 1});
-    tChannel.send("works");
+    //tChannel.send("works");
     console.log(xORo);
     var awaitR = `${msgs.map(msg => msg.content)}`
+    var rLetter = awaitR.slice(0,1);
+    var rNumber = awaitR.slice(2,2);
+    tic("x");
+    updateBoard();
+    tChannel.fetchMessage(boardID).then(async emsg => {
+      await emsg.edit(tBoard);
+    ;})
+
+    })
+  }
+  function tic(symbol) {
+    if (rNumber == "1"){
+      if (rLetter == "A"){
+          row1[1] = `:${symbol}:`;
+      }
+    }
+    if (rNumber == "1"){
+      if (rLetter == "B"){
+          row1[2] = `:${symbol}:`;
+      }
+    }
+    if (rNumber == "1"){
+      if (rLetter == "C"){
+          row1[3] = `:${symbol}:`;
+      }
+    }
+    if (rNumber == "2"){
+      if (rLetter == "A"){
+          row2[1] = `:${symbol}:`;
+      }
+    }
+    if (rNumber == "1"){
+      if (rLetter == "B"){
+          row2[2] = `:${symbol}:`;
+      }
+    }
+    if (rNumber == "1"){
+      if (rLetter == "C"){
+          row2[3] = `:${symbol}:`;
+      }
+    }
+    if (rNumber == "3"){
+      if (rLetter == "A"){
+          row3[1] = `:${symbol}:`;
+      }
+    }
+    if (rNumber == "1"){
+      if (rLetter == "B"){
+          row3[2] = `:${symbol}:`;
+      }
+    }
+    if (rNumber == "1"){
+      if (rLetter == "C"){
+          row3[3] = `:${symbol}:`;
+      }
+    }
+  }
+  function updateBoard() {
+    bRow3 = row3.join(" ");
+    bRow2 = row2.join(" ");
+    bRow1 = row1.join(" ");
+    tBoard = [bRow3,bRow2,bRow1,":black_large_square: :regional_indicator_a: :regional_indicator_b: :regional_indicator_c:"];
   }
   }
 
