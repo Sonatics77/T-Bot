@@ -30,13 +30,13 @@ module.exports.run = async (Bot, message, args) => {
   await tChannel.send(`Waiting for ${tArgs[1]} to reply with \"yes\"...`);
   const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {maxMatches: 1});
   tChannel.send("Starting tic tac toe game...");
-  if(xORo == 1){
+  /*if(xORo == 1){
     uxORo = userA
     await tChannel.send(`${message.author} is starting as :x: !`);
   } else {
     uxORo = userB
     await tChannel.send(`${tArgs[1]} is starting as :o: !`);
-  }
+  }*/
   await tChannel.send(tBoard);
   var boardID = tChannel.lastMessageID; //boardID
 
@@ -47,7 +47,7 @@ module.exports.run = async (Bot, message, args) => {
   console.log(xORo);
   while(fin == 0){
     xORo = (xORo+1)-(xORo*2);//switches user
-    if(xORo == 1){
+    if(xORo == 0){
       await tChannel.send(`${message.author}'s turn'`);
       var tdel = tChannel.lastMessageID;
     } else {
