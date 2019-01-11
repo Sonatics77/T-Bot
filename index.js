@@ -38,7 +38,9 @@ Bot.on("message", async message => {
   let prefix = "t.";
   if(message.content.slice(prefix.length) == prefix){
   let messageArray = message.content.split(" ");
+  console.lod(messageArray);
   let cmd = messageArray[0];
+  console.lod(cmd);
   let args = messageArray.slice(2);
 
 
