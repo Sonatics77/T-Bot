@@ -49,6 +49,8 @@ module.exports.run = async (Bot, message, args) => {
     xORo = (xORo+1)-(xORo*2);
 
     console.log(xORo);
+    getuId();
+    console.log(uxORo);
     const msgs = await tChannel.awaitMessages(msg => msg.author.id == uxORo, {maxMatches: 1});
     //tChannel.send("works");
     //console.log(xORo);
@@ -58,9 +60,7 @@ module.exports.run = async (Bot, message, args) => {
     if (xORo == 1) {
       tic("o");
     } else {
-      if (xORo == 0){
         tic("x");
-      }
     }
     //console.log(rLetter);
     //console.log(rNumber);
