@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (Bot, message, args) => {
 
-  var tBoard = ["    |    |", " __|__|__", "    |    |", "__|__|__", "    |    |"];
+  var tBoard = ["██ ██ ██", "██ ██ ██", "██ ██ ██"];
 
   var tUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(! tUser) return message.channel.send("Can't find user!");
@@ -28,9 +28,8 @@ module.exports.run = async (Bot, message, args) => {
     name: "ttt"
   }
 /*
-  |    |
-  __|__|__
-  |    |
-  __|__|__
-  |    |
+  ██ ██ ██
+  ██ ██ ██
+  ██ ██ ██
+
 */
