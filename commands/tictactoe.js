@@ -51,13 +51,20 @@ module.exports.run = async (Bot, message, args) => {
         xORo = 0;
       }
     }
+    console.log(xORo);
     const msgs = await tChannel.awaitMessages(msg => msg.author.id == xORo, {maxMatches: 1});
     //tChannel.send("works");
     console.log(xORo);
     var awaitR = `${msgs.map(msg => msg.content)}`
     var rLetter = awaitR.slice(0,1);
     var rNumber = awaitR.slice(1,2);
-    tic("x");
+    if (xORo == 1) {
+      tic("o");
+    } else {
+      if (xORo == 0){
+        tic("x");
+      }
+    }
     updateBoard();
     tChannel.fetchMessage(boardID).then(async emsg => {
       await emsg.edit(tBoard);
