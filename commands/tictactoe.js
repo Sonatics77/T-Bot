@@ -68,12 +68,96 @@ module.exports.run = async (Bot, message, args) => {
       await rmsg.delete();
     })
     var awaitR = `${msgs.map(msg => msg.content)}`
+    if (awaitR == "end") {
+      return message.channel.send("Tic Tac Toe game ended");
+    }
     var rLetter = awaitR.slice(0,1);
     var rNumber = awaitR.slice(1,2);
     if (xORo == 1) {
-      tic("o");
+      var symbol = "o";
     } else {
-        tic("x");
+      var symbol = "x";
+    }
+    if (rNumber == "1"){
+      if (rLetter == "a" || rLetter == "A"){
+        if (row1[1] == ":white_large_square:") {
+          row1[1] = `:${symbol}:`;
+        } else {
+          return message.channel.send("Invalid input, game ended");
+        }
+      }
+    }
+    if (rNumber == "1"){
+      if (rLetter == "b" || rLetter == "B"){
+        if (row1[2] == ":white_large_square:") {
+          row1[2] = `:${symbol}:`;
+        } else {
+          return message.channel.send("Invalid input, game ended");
+        }
+      }
+    }
+    if (rNumber == "1"){
+      if (rLetter == "c" || rLetter == "C"){
+        if (row1[3] == ":white_large_square:") {
+          row1[3] = `:${symbol}:`;
+        } else {
+          return message.channel.send("Invalid input, game ended");
+        }
+      }
+    }
+    if (rNumber == "2"){
+      if (rLetter == "a" || rLetter == "A"){
+        if (row2[1] == ":white_large_square:") {
+          row2[1] = `:${symbol}:`;
+        } else {
+          return message.channel.send("Invalid input, game ended");
+        }
+      }
+    }
+    if (rNumber == "2"){
+      if (rLetter == "b" || rLetter == "B"){
+        if (row2[2] == ":white_large_square:") {
+          row2[2] = `:${symbol}:`;
+        } else {
+          return message.channel.send("Invalid input, game ended");
+        }
+      }
+    }
+    if (rNumber == "2"){
+      if (rLetter == "c" || rLetter == "C"){
+        if (row2[3] == ":white_large_square:") {
+          row2[3] = `:${symbol}:`;
+        } else {
+          return message.channel.send("Invalid input, game ended");
+        }
+      }
+    }
+    if (rNumber == "3"){
+      if (rLetter == "a" || rLetter == "A"){
+        if (row3[1] == ":white_large_square:") {
+          row3[1] = `:${symbol}:`;
+        } else {
+          return message.channel.send("Invalid input, game ended");
+        }
+      }
+    }
+    if (rNumber == "3"){
+      if (rLetter == "b" || rLetter == "B"){
+        if (row3[2] == ":white_large_square:") {
+          row3[2] = `:${symbol}:`;
+        } else {
+          return message.channel.send("Invalid input, game ended");
+        }
+      }
+    }
+    if (rNumber == "3"){
+      if (rLetter == "c" || rLetter == "C"){
+        if (row3[3] == ":white_large_square:") {
+          row3[3] = `:${symbol}:`;
+        } else {
+          return message.channel.send("Invalid input, game ended");
+        }
+      }
     }
     //console.log(rLetter);
     //console.log(rNumber);
@@ -86,89 +170,9 @@ module.exports.run = async (Bot, message, args) => {
     })
 
     }
-    function tic(symbol) {
-      if (rNumber == "1"){
-        if (rLetter == "a" || rLetter == "A"){
-          if (row1[1] == ":white_large_square:") {
-            row1[1] = `:${symbol}:`;
-          } else {
-            return message.channel.send("Invalid input, game ended");
-          }
-        }
-      }
-      if (rNumber == "1"){
-        if (rLetter == "b" || rLetter == "B"){
-          if (row1[2] == ":white_large_square:") {
-            row1[2] = `:${symbol}:`;
-          } else {
-            return message.channel.send("Invalid input, game ended");
-          }
-        }
-      }
-      if (rNumber == "1"){
-        if (rLetter == "c" || rLetter == "C"){
-          if (row1[3] == ":white_large_square:") {
-            row1[3] = `:${symbol}:`;
-          } else {
-            return message.channel.send("Invalid input, game ended");
-          }
-        }
-      }
-      if (rNumber == "2"){
-        if (rLetter == "a" || rLetter == "A"){
-          if (row2[1] == ":white_large_square:") {
-            row2[1] = `:${symbol}:`;
-          } else {
-            return message.channel.send("Invalid input, game ended");
-          }
-        }
-      }
-      if (rNumber == "2"){
-        if (rLetter == "b" || rLetter == "B"){
-          if (row2[2] == ":white_large_square:") {
-            row2[2] = `:${symbol}:`;
-          } else {
-            return message.channel.send("Invalid input, game ended");
-          }
-        }
-      }
-      if (rNumber == "2"){
-        if (rLetter == "c" || rLetter == "C"){
-          if (row2[3] == ":white_large_square:") {
-            row2[3] = `:${symbol}:`;
-          } else {
-            return message.channel.send("Invalid input, game ended");
-          }
-        }
-      }
-      if (rNumber == "3"){
-        if (rLetter == "a" || rLetter == "A"){
-          if (row3[1] == ":white_large_square:") {
-            row3[1] = `:${symbol}:`;
-          } else {
-            return message.channel.send("Invalid input, game ended");
-          }
-        }
-      }
-      if (rNumber == "3"){
-        if (rLetter == "b" || rLetter == "B"){
-          if (row3[2] == ":white_large_square:") {
-            row3[2] = `:${symbol}:`;
-          } else {
-            return message.channel.send("Invalid input, game ended");
-          }
-        }
-      }
-      if (rNumber == "3"){
-        if (rLetter == "c" || rLetter == "C"){
-          if (row3[3] == ":white_large_square:") {
-            row3[3] = `:${symbol}:`;
-          } else {
-            return message.channel.send("Invalid input, game ended");
-          }
-        }
-      }
-    }
+    //function tic(symbol) {
+
+    //}
     function updateBoard() {
       bRow3 = row3.join(" ");
       bRow2 = row2.join(" ");
