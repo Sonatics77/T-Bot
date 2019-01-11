@@ -21,8 +21,8 @@ module.exports.run = async (Bot, message, args) => {
   if(! tUser) return message.channel.send("Can't find user!");
   var tArgs = message.content.trim().split(" ");
   var userA = message.author.id;
-  var user2B = tArgs[1]
-  var userB = user2B.slice(2,tArgs[1].length-1);
+  var user2B = tArgs[1].split("!");
+  var userB = user2B;//user2B.slice(2,tArgs[1].length-1);
   console.log(userA);
   console.log(userB);
   var tChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
