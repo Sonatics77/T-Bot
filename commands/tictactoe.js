@@ -85,12 +85,12 @@ module.exports.run = async (Bot, message, args) => {
             row2[1] = `:${symbol}:`;
         }
       }
-      if (rNumber == "1"){
+      if (rNumber == "2"){
         if (rLetter == "b" || rLetter == "B"){
             row2[2] = `:${symbol}:`;
         }
       }
-      if (rNumber == "1"){
+      if (rNumber == "2"){
         if (rLetter == "c" || rLetter == "C"){
             row2[3] = `:${symbol}:`;
         }
@@ -100,12 +100,12 @@ module.exports.run = async (Bot, message, args) => {
             row3[1] = `:${symbol}:`;
         }
       }
-      if (rNumber == "1"){
+      if (rNumber == "3"){
         if (rLetter == "b" || rLetter == "B"){
             row3[2] = `:${symbol}:`;
         }
       }
-      if (rNumber == "1"){
+      if (rNumber == "3"){
         if (rLetter == "c" || rLetter == "C"){
             row3[3] = `:${symbol}:`;
         }
