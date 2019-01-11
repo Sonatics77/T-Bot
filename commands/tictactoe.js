@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 module.exports.run = async (Bot, message, args) => {
 
   let tUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(! bUser) return message.channel.send("Can't find user!");
+  if(! tUser) return message.channel.send("Can't find user!");
   let tArgs = message.content.trim().split(" ");
   let userA = message.author.id;
   let user2B = tArgs[1]
