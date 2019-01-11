@@ -30,7 +30,7 @@ module.exports.run = async (Bot, message, args) => {
   await tChannel.send(`Waiting for ${tArgs[1]} to reply with \"yes\"...`);
   const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {maxMatches: 1});
   tChannel.send("Starting tic tac toe game...");
-  if(xORo == 0){
+  if(xORo == 1){
     uxORo = userA
     await tChannel.send(`${message.author} is starting as :x: !`);
   } else {
