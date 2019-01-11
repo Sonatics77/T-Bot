@@ -28,7 +28,7 @@ module.exports.run = async (Bot, message, args) => {
   while(fin == 0){
     if(xORo == 0){
       xORo = userA
-      await tChannel.send(`${message.content.author} is starting as :x: !`);
+      await tChannel.send(`${message.author} is starting as :x: !`);
     } else {
       xORo = userB
       await tChannel.send(`${tArgs[1]} is starting as :o: !`);
