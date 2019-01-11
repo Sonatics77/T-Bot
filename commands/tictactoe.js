@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (Bot, message, args) => {
 
-  var tBoard = ["3 :white_large_square: :white_large_square: :white_large_square:", "2 :white_large_square: :white_large_square: :white_large_square:", "1 :white_large_square: :white_large_square: :white_large_square:", "      A    B    C"];
+  var tBoard = [":three: :white_large_square: :white_large_square: :white_large_square:", ":two: :white_large_square: :white_large_square: :white_large_square:", ":one: :white_large_square: :white_large_square: :white_large_square:", "       :regional_indicator_a: :regional_indicator_b: :regional_indicator_c:"];
 
   var tUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(! tUser) return message.channel.send("Can't find user!");
