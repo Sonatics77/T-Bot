@@ -269,7 +269,7 @@ module.exports.run = async (Bot, message, args) => {
     }
 
     function checkFull() {
-      if (!row1.includes("white_large_square") || !row2.includes("white_large_square") || !row3.includes("white_large_square") && fin == 0) {
+      if (!row1.includes("white_large_square") && !row2.includes("white_large_square") && !row3.includes("white_large_square") && fin == 0) {
         return fin = "draw";
       }
     }
