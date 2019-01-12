@@ -273,6 +273,9 @@ module.exports.run = async (Bot, message, args) => {
         return fin = "draw";
       }
     }
+  } else {
+
+  tChannel.send(`${tArgs[1]} did not accept, game ended`);
   }
 
   }
