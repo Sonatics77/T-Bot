@@ -30,7 +30,7 @@ module.exports.run = async (Bot, message, args) => {
   var tChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
   //console.log(boardID);
   await tChannel.send(`${tArgs[1]} has 30 seconds to reply with \"yes\"...`);
-  const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {time: 30000});
+  const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {time: 30000, maxMatches: 1});
   if (msgs.map(msg => msg.content).includes("yes")){
   tChannel.send("Starting tic tac toe game...");
   /*if(xORo == 1){
