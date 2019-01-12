@@ -170,6 +170,7 @@ module.exports.run = async (Bot, message, args) => {
     tChannel.fetchMessage(tdel).then(async (tmsg) => {
       tmsg.delete();
     })
+    checkHorizontal("x");
 
     }
     if(fin == 1){
