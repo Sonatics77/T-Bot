@@ -29,8 +29,9 @@ module.exports.run = async (Bot, message, args) => {
   console.log(userB);
   var tChannel= message.guild.channels.find(channel => channel.id == message.channel.id);
   //console.log(boardID);
-  await tChannel.send(`Waiting for ${tArgs[1]} to reply with \"yes\"...`);
-  const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {maxMatches: 1});
+  await tChannel.send(`${tArgs[1]} has 30 seconds to reply with \"yes\"...`);
+  const msgs = await tChannel.awaitMessages(msg => msg.author.id == userB, {time: 30000});
+  if (msgs.map(msg => msg.content).includes("yes")){
   tChannel.send("Starting tic tac toe game...");
   /*if(xORo == 1){
     uxORo = userA
@@ -272,6 +273,7 @@ module.exports.run = async (Bot, message, args) => {
         return fin = "draw";
       }
     }
+  }
 
   }
 
