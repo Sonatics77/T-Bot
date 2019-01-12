@@ -172,6 +172,9 @@ module.exports.run = async (Bot, message, args) => {
     })
 
     }
+    if(fin == 1){
+      console.log("finished");
+    }
     //function tic(symbol) {
 
     //}
@@ -187,6 +190,32 @@ module.exports.run = async (Bot, message, args) => {
       } else {
         uxORo = userB
       }
+    }
+    function checkHorizontal(symbol) {
+      if (row1[1] == `:${symbol}:`) {
+        if (row1[2] == `:${symbol}:`) {
+          if (row1[3] == `:${symbol}:`) {
+            return fin = 1;
+          }
+        }
+      }
+      if (row2[1] == `:${symbol}:`) {
+        if (row2[2] == `:${symbol}:`) {
+          if (row2[3] == `:${symbol}:`) {
+            return fin = 1;
+          }
+        }
+      }
+      if (row3[1] == `:${symbol}:`) {
+        if (row3[2] == `:${symbol}:`) {
+          if (row3[3] == `:${symbol}:`) {
+            return fin = 1;
+          }
+        }
+      }
+    }
+    function checkWin(symbol) {
+
     }
 
   }
