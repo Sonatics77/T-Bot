@@ -170,12 +170,11 @@ module.exports.run = async (Bot, message, args) => {
     tChannel.fetchMessage(tdel).then(async (tmsg) => {
       tmsg.delete();
     })
-    checkHorizontal("x");
+    checkWin("x");
+    checkWin("o");
 
     }
-    if(fin == 1){
-      console.log("finished");
-    }
+    tChannel.send(`:${fin}: has won!`);
     //function tic(symbol) {
 
     //}
@@ -196,27 +195,71 @@ module.exports.run = async (Bot, message, args) => {
       if (row1[1] == `:${symbol}:`) {
         if (row1[2] == `:${symbol}:`) {
           if (row1[3] == `:${symbol}:`) {
-            return fin = 1;
+            return fin = symbol;
           }
         }
       }
       if (row2[1] == `:${symbol}:`) {
         if (row2[2] == `:${symbol}:`) {
           if (row2[3] == `:${symbol}:`) {
-            return fin = 1;
+            return fin = symbol;
           }
         }
       }
       if (row3[1] == `:${symbol}:`) {
         if (row3[2] == `:${symbol}:`) {
           if (row3[3] == `:${symbol}:`) {
-            return fin = 1;
+            return fin = symbol;
           }
         }
       }
     }
+    // CHECKS IF SOMEONE HAS WON HORIZONTALLY
+    function checkVertical(symbol) {
+      if (row1[1] == `:${symbol}:`) {
+        if (row2[1] == `:${symbol}:`) {
+          if (row3[1] == `:${symbol}:`) {
+            return fin = symbol;
+          }
+        }
+      }
+      if (row1[2] == `:${symbol}:`) {
+        if (row2[2] == `:${symbol}:`) {
+          if (row3[2] == `:${symbol}:`) {
+            return fin = symbol;
+          }
+        }
+      }
+      if (row1[3] == `:${symbol}:`) {
+        if (row2[3] == `:${symbol}:`) {
+          if (row3[3] == `:${symbol}:`) {
+            return fin = symbol;
+          }
+        }
+      }
+    }
+    // CHECKS IF SOMEONE HAS WON VERTICALLY
+    function checkDiagonal(symbol) {
+      if (row1[1] == `:${symbol}:`) {
+        if (row2[2] == `:${symbol}:`) {
+          if (row3[3] == `:${symbol}:`) {
+            return fin = symbol;
+          }
+        }
+      }
+      if (row1[3] == `:${symbol}:`) {
+        if (row2[2] == `:${symbol}:`) {
+          if (row3[1] == `:${symbol}:`) {
+            return fin = symbol;
+          }
+        }
+      }
+    }
+    // CHECKS IF SOMEONE HAS WON DIAGONALLY
     function checkWin(symbol) {
-
+      checkHorizontal(symbol);
+      checkVertical(symbol);
+      checkDiagonal(symbol);
     }
 
   }
