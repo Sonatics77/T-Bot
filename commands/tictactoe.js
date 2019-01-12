@@ -173,7 +173,7 @@ module.exports.run = async (Bot, message, args) => {
     })
     checkWin("x");
     checkWin("o");
-    checkFull();
+    //checkFull();
 
     }
     if (fin == "draw") {
@@ -268,11 +268,11 @@ module.exports.run = async (Bot, message, args) => {
       checkDiagonal(symbol);
     }
 
-    function checkFull() {
-      if (row1[1] != "white_large_square" && row1[2] != "white_large_square" && row1[3] != "white_large_square" && row2[1] != "white_large_square" && row2[2] != "white_large_square" && row2[3] != "white_large_square" && row3[1] != "white_large_square" && row3[2] != "white_large_square" && row3[3] != "white_large_square" && fin == 0) {
-        return fin = "draw";
-      }
-    }
+    //function checkFull() {
+      //if (row1[1] != "white_large_square" && row1[2] != "white_large_square" && row1[3] != "white_large_square" && row2[1] != "white_large_square" && row2[2] != "white_large_square" && row2[3] != "white_large_square" && row3[1] != "white_large_square" && row3[2] != "white_large_square" && row3[3] != "white_large_square" && fin == 0) {
+        //return fin = "draw";
+      //}
+    //}
   } else {
 
   tChannel.send(`${tArgs[1]} did not accept, game ended`);
