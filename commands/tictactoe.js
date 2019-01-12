@@ -172,9 +172,14 @@ module.exports.run = async (Bot, message, args) => {
     })
     checkWin("x");
     checkWin("o");
+    checkFull();
 
     }
+    if (fin == "draw") {
+      tChannel.send("It's a draw!");
+    } else {
     tChannel.send(`:${fin}: has won!`);
+    }
     //function tic(symbol) {
 
     //}
@@ -260,6 +265,12 @@ module.exports.run = async (Bot, message, args) => {
       checkHorizontal(symbol);
       checkVertical(symbol);
       checkDiagonal(symbol);
+    }
+
+    function checkFull() {
+      if (!tBoard.includes("white_large_square") && fin == 0) {
+        return fin = "draw";
+      }
     }
 
   }
