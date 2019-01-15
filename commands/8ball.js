@@ -21,8 +21,9 @@ module.exports.run = async (Bot, message, args) => {
  "My sources say no.",
  "Outlook not so good.",
  "Very doubtful."];
- if (!args){
-   return message.channel.send("Send a question you silly nonce");
+ var msgLast = message.content.slice(message.content-1,message.content);
+ if (msgLast != "?"){
+   return message.channel.send("Send a question you silly nonce. End it with a \"?\"");
  } else {
  var eightResponse = responses[Math.floor(Math.random() * (responses.length + 1))];
  return message.channel.send(eightResponse);
