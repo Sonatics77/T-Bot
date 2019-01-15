@@ -21,8 +21,12 @@ module.exports.run = async (Bot, message, args) => {
  "My sources say no.",
  "Outlook not so good.",
  "Very doubtful."];
+ if (!args){
+   return message.channel.send("Send a question you silly nonce");
+ } else {
  var eightResponse = responses[Math.floor(Math.random() * (responses.length + 1))];
  return message.channel.send(eightResponse);
+}
 
 }
   module.exports.help = {
