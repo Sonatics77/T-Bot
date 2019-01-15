@@ -21,7 +21,7 @@ module.exports.run = async (Bot, message, args) => {
  "My sources say no.",
  "Outlook not so good.",
  "Very doubtful."];
- var msgLast = message.content.slice(message.content-1,message.content);
+ var msgLast = message.content.slice(message.content.length-1,message.content.length);
  if (msgLast != "?"){
    return message.channel.send("Send a question you silly nonce. End it with a \"?\"");
  } else {
