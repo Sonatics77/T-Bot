@@ -39,7 +39,7 @@ Bot.on("message", async message => {
 
   if(!prefixes[message.guild.id]) {
     prefixes[message.guild.id] = {
-      prefixes: "t.";
+      prefixes: config.prefix;
     };
   }
 
