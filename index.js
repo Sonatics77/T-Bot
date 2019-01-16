@@ -28,7 +28,7 @@ Fs.readdir("./commands/", (err, files) => {
 
 Bot.on("ready", async () => {
   console.log(`${Bot.user.username} is online!`)
-  Bot.user.setActivity("On Roulette", {type: "GAMBLING"});
+  Bot.user.setActivity("my will to live dissapear", {type: "WATCHING"});
 });
 
 Bot.on("message", async message => {
