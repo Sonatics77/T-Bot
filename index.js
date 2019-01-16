@@ -35,7 +35,16 @@ Bot.on("message", async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
 
-  let prefix = "t.";
+  let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+
+  if(!prefixes[message.guild.id]) {
+    prefixes[message.guild.id] = {
+      prefixes: "t.";
+    };
+  }
+
+  let prefic = prefixes[message.guild.id].prefixes;
+  //let prefix = "t.";
   if(message.content.slice(0,prefix.length).trim() == prefix){
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
