@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot,message,args)=> {
+module.exports.run = async (Bot, message, args, prefix)=> {
   //t.addrole @name Role
   let arUser = message.member
   if(! message.member.hasPermission("MANAGE_MEMBERS")) return message.reply("You think you can fool me, you don't have permission to do that, nothing goes over my head, my reflexes are too fast, I would catch it");

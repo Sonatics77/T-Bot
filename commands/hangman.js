@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 var randomWord = require('random-words');
 
-module.exports.run = async (Bot, message, args) => {
+module.exports.run = async (Bot, message, args, prefix) => {
   var hword = (randomWord());
   var hincorrect = [];
   var hHang = ["――――", "|/              |", "|                ", "|                ", "|                ", "|\\"];

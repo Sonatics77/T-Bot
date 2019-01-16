@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 var rn = require('random-number');
 
 
-module.exports.run = async (Bot, message, args) => {
+module.exports.run = async (Bot, message, args, prefix) => {
   var row3 = [":three:",":white_large_square:",":white_large_square:",":white_large_square:"];
   var row2 = [":two:",":white_large_square:",":white_large_square:",":white_large_square:"];
   var row1 = [":one:",":white_large_square:",":white_large_square:",":white_large_square:"];

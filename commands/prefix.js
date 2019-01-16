@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const Fs = require("fs");
 
-module.exports.run = async (Bot, message, args) => {
+module.exports.run = async (Bot, message, args, prefix) => {
   var pArgs = message.content.split(" ");
 
   if(!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You do not have the permissions to use this command");

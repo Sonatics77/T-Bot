@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const ms = require("ms");
 console.log("works")
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (Bot, message, args, prefix) => {
   let unmute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(! unmute) return message.reply("Couldn't find user.")
   let muterole = message.guild.roles.find(`name`, "muted");

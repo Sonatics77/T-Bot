@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (Bot, message, args) => {
+module.exports.run = async (Bot, message, args, prefix) => {
   var responses = ["It is certain.",
  "It is decidedly so.",
  "Without a doubt.",

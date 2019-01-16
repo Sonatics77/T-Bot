@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (Bot, message, args) => {
+module.exports.run = async (Bot, message, args, prefix) => {
 
 
       let sicon = message.guild.iconURL;

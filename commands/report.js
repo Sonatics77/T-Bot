@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (Bot, message, args, prefix) => {
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     let failUser = ["Couldnt find user. They might be hiding under the couch.","Couldnt find user. Check your spelling dumbo.","Couldnt find user. Looks like they ran away from their problems","Couldn't find user. Did they steal the invisibility cloak?"];
     let rand = failUser[Math.floor(Math.random() * failUser.length)];

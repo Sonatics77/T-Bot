@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (Bot, message, args) => {
+module.exports.run = async (Bot, message, args, prefix) => {
     let colourName = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "black", "white"];
     let colourHex = ["#ff0000", "#ff6100", "#ffdd00", "#19ff00", "#0087ff", "#9400ff", "#fc00a8", "#000000", "#ffffff"];
     let embedAuth = message.author;

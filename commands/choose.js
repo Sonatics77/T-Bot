@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (Bot, message, args) => {
+module.exports.run = async (Bot, message, args, prefix) => {
   let cmdargs1 = message.content.slice(1).trim().split(", ");
   let argus = cmdargs1.splice(0,1);
   let chosen = cmdargs1[Math.floor(Math.random() * cmdargs1.length)]
