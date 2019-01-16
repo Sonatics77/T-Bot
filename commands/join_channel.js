@@ -11,5 +11,5 @@ module.exports.run = async (Bot, message, args) => {
   }
 }
   module.exports.help = {
-    name: "8ball"
+    name: "join"
   }
