@@ -13,7 +13,9 @@ module.exports.run = async (Bot, message, args) => {
     prefixes: pArgs[0]
   };
 
-  Fs.writeFile("./prefixes.json", JSON.stringify(prefixes),);
+  Fs.writeFile("./prefixes.json", JSON.stringify(prefixes), (err) => {
+    if (err) console.log(err)
+  });
 
   return message.channel.send(`The new prefix for TaskieBot has been set to: ${pArgs[0]}`);
 
