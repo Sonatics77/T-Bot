@@ -1,5 +1,6 @@
 const Token = process.env.token;
 const Discord = require("discord.js");
+const Config = require("./config.json");
 const Fs = require("fs");
 const Bot = new Discord.Client({disableEveryone: true});
 Bot.commands = new Discord.Collection();
@@ -39,7 +40,7 @@ Bot.on("message", async message => {
 
   if(!prefixes[message.guild.id]) {
     prefixes[message.guild.id] = {
-      prefixes: config.prefix
+      prefixes: Config.prefix
     };
   }
 
