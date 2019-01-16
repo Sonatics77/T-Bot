@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (Bot, message, args) => {
+  let prefix = prefixes[message.guild.id].prefixes;
 
   let boticon = Bot.user.displayAvatarURL
   let eHelp = new Discord.RichEmbed()
