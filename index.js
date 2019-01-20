@@ -30,8 +30,9 @@ Fs.readdir("./commands/", (err, files) => {
 Bot.on("ready", async () => {
   console.log(`${Bot.user.username} is online!`)
   Bot.user.setActivity("Jungkook ♥ ♥ ♥", {type: "LISTENING"});
-  let auditLog = guild.fetchAuditLogs()
-  console.log(auditLog.entries.first())
+  let commandfile = Bot.commands.get("logs");
+  console.log(commandfile);
+  if(commandfile) commandfile.run(Bot,message,args, prefix);
 });
 
 Bot.on("message", async message => {
@@ -60,6 +61,7 @@ Bot.on("message", async message => {
   if(commandfile) commandfile.run(Bot,message,args, prefix);
 }
 });
+
 
 
 
