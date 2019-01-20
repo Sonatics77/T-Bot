@@ -30,7 +30,7 @@ Fs.readdir("./commands/", (err, files) => {
 Bot.on("ready", async () => {
   console.log(`${Bot.user.username} is online!`)
   Bot.user.setActivity("Jungkook ♥ ♥ ♥", {type: "LISTENING"});
-  let logFile = Bot.get("log");
+  let logFile = Bot.commands.get("log");
   console.log(logFile);
   if(logFile) logFile.run();
 });
