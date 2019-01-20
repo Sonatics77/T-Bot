@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const ms = require("ms");
-console.log("works")
 
 module.exports.run = async (Bot, message, args, prefix) => {
   let unmute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
