@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const Ffmpeg = require("ffmpeg");
+const Ffmpeg = require("node_modules/ffmpeg");
 
 module.exports.run = async (Bot, message, args, prefix) => {
   let jrChannel = await message.member.voiceChannelID;
