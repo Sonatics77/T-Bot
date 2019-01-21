@@ -45,7 +45,7 @@ Bot.on("message", async message => {
   }
 
   let prefix = prefixes[message.guild.id].prefixes;
-  console.log(prefix)
+  //console.log(prefix)
   //let prefix = "t.";
   if(message.content.slice(0,prefix.length).trim() == prefix){
   let messageArray = message.content.split(" ");
