@@ -35,6 +35,6 @@ module.exports.run = async (Bot, message, args, prefix) => {
 
 }
 
-  module.exports.help = {
-    name: "cycle"
-  }
+module.exports.help {
+  name:"cycle"
+}
