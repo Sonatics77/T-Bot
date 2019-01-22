@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.4.2",
-    "ffmpeg": "20190122-87c165c",
+    "ffmpeg": "0.4.1",
     "ms": "^2.1.1",
     "opusscript": "0.0.6",
     "random-number": "0.0.9",
