@@ -20,7 +20,7 @@ Fs.readdir("./commands/", (err, files) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
     console.log(`${f} loaded!`);
-    Bot.commands.set(props.help, props);
+    Bot.commands.set(props.help.name, props);
   });
 
 });
@@ -58,7 +58,7 @@ Bot.on("message", async message => {
 }
 });
 
-  /*while(){
+  while("0"=="0"){
   setTimeout(Jungkook,10000);
   setTimeout(Jimin,10000);
   setTimeout(V,10000);
@@ -66,7 +66,7 @@ Bot.on("message", async message => {
   setTimeout(RM,10000);
   setTimeout(Jin,10000);
   setTimeout(JHope,10000);
-//}
+}
 
   function Jungkook () {
     Bot.user.setActivity("Jungkook ♥ ♥ ♥ ♥ ♥ ♥ ♥", {type: "LISTENING"});
@@ -89,7 +89,7 @@ Bot.on("message", async message => {
   function JHope () {
     Bot.user.setActivity("J-Hope ♥", {type: "LISTENING"});
   }
-*/
+
 
 
 
