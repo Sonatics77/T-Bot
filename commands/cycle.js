@@ -32,6 +32,9 @@ module.exports.run = async (Bot, message, args, prefix) => {
   function JHope () {
     Bot.user.setActivity("J-Hope ♥", {type: "LISTENING"});
   }
+
+}
+
   module.exports.help = {
-    name: "kick"
+    name: "cycle"
   }
