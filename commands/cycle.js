@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (Bot, message, args, prefix) => {
-  while(){
+  while("0"=="0"){
   setTimeout(Jungkook,10000);
   setTimeout(Jimin,10000);
   setTimeout(V,10000);
