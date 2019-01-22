@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const Soundmod = require("soundmod");
+const FF = require("ff");
 
 module.exports.run = async (Bot, message, args, prefix) => {
   var vChannel = message.member.voiceChannel;
