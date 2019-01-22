@@ -58,7 +58,7 @@ Bot.on("message", async message => {
 }
 });
 
-  while("0"=="0"){
+  /*while("0"=="0"){
   setTimeout(Jungkook,10000);
   setTimeout(Jimin,10000);
   setTimeout(V,10000);
@@ -89,7 +89,7 @@ Bot.on("message", async message => {
   function JHope () {
     Bot.user.setActivity("J-Hope ♥", {type: "LISTENING"});
   }
-
+*/
 
 
 
