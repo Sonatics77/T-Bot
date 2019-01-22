@@ -7,7 +7,6 @@ module.exports.run = async (Bot, message, args, prefix) => {
   vChannel.join();
 }
 
-}
   module.exports.help = {
     name: "join"
   }
