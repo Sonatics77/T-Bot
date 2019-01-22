@@ -29,15 +29,7 @@ Fs.readdir("./commands/", (err, files) => {
 
 Bot.on("ready", async () => {
   console.log(`${Bot.user.username} is online!`)
-  for(var i = 0; i<100; i++){
-  setTimeout(Jungkook,600000);
-  setTimeout(Jimin,600000);
-  setTimeout(V,600000);
-  setTimeout(Suga,600000);
-  setTimeout(RM,600000);
-  setTimeout(Jin,600000);
-  setTimeout(JHope,600000);
-}
+  Bot.user.setActivity("Jungkook ♥ ♥ ♥", {type: "LISTENING"})
 
 
   function Jungkook () {
