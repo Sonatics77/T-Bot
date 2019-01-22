@@ -30,13 +30,13 @@ Fs.readdir("./commands/", (err, files) => {
 Bot.on("ready", async () => {
   console.log(`${Bot.user.username} is online!`)
   for(var i = 0; i<100; i++){
-  setTimeout(Jungkook,10000);
-  setTimeout(Jimin,10000);
-  setTimeout(V,10000);
-  setTimeout(Suga,10000);
-  setTimeout(RM,10000);
-  setTimeout(Jin,10000);
-  setTimeout(JHope,10000);
+  setTimeout(Jungkook,600000);
+  setTimeout(Jimin,600000);
+  setTimeout(V,600000);
+  setTimeout(Suga,600000);
+  setTimeout(RM,600000);
+  setTimeout(Jin,600000);
+  setTimeout(JHope,600000);
 }
 
 
