@@ -11,6 +11,7 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "ffmpeg": "0.0.4",
+    "give-me-a-joke": "^0.1.2",
     "ms": "^2.1.1",
     "opusscript": "0.0.6",
     "random-number": "0.0.9",
