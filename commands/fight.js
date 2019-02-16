@@ -14,7 +14,8 @@ module.exports.run = async (Bot,message,args,prefix) => {
   //stats board
   console.log("works");
   console.log(fUser);
-  //console.log(message.channel);
+  console.log(message);
+   //console.log(message.channel);
   message.channel.send("test");
 /*  var p1Board = new Discord.RichEmbed() //player1 embed
   .setTitle(`${message.author} vs ${fUser}`)
