@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (Bot, message, args, prefix) => {
   //var message.channel = message.guild.channels.find(channel => channel.id == message.channel.id);
-  var fUser = message.guild.member(message.mentions.users.first())// || message.guild.members.get(args[0]));
+  var fUser = message.mentions.users.first().id// || message.guild.members.get(args[0]));
   if(! fUser) return message.channel.send("Can't find that user");
   var fTurnRand = Math.floor(Math.random() * 1);
   var p1Icon = message.author.displayAvatarURL
