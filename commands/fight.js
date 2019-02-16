@@ -5,8 +5,8 @@ module.exports.run = async (Bot,message,args,prefix) => {
   var fUser = message.mentions.users.first().id// || message.guild.members.get(args[0]));
   if(! fUser) return message.channel.send("Can't find that user");
   var fTurnRand = Math.floor(Math.random() * 1);
-  var p1Icon = message.author.displayAvatarURL
-  var p2Icon = fUser.displayAvatarURL
+  //var p1Icon = message.author.displayAvatarURL
+  //var p2Icon = fUser.displayAvatarURL
   var p1Stat = ["100", "0"];
   var p1DiStat = [`Health: ${p1Stat[1]}`, `Shield: ${p1Stat[2]}`];
   var p2Stat = ["100", "0"];
