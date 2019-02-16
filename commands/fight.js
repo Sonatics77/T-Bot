@@ -12,6 +12,7 @@ module.exports.run = async (Bot, message, args, prefix) => {
   var p2Stat = ["100", "0"];
   var p2DiStat = [`Health: ${p2Stat[1]}`, `Shield: ${p2Stat[2]}`];
   //stats board
+  console.log("works");
   var p1Board = new Discord.RichEmbed() //player1 embed
   .setTitle(`${message.author} vs ${fUser}`)
   .setColor(`#ef452b`)
