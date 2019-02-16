@@ -16,7 +16,7 @@ module.exports.run = async (Bot,message,args,prefix) => {
   console.log(fUser);
   //console.log(message.channel);
   message.channel.send(fUser);
-  var p1Board = new Discord.RichEmbed() //player1 embed
+/*  var p1Board = new Discord.RichEmbed() //player1 embed
   .setTitle(`${message.author} vs ${fUser}`)
   .setColor(`#ef452b`)
   .setThumbnail(p1Icon)
@@ -28,6 +28,7 @@ module.exports.run = async (Bot,message,args,prefix) => {
   .addField(`${fUser}`, p2DiStat);
   message.channel.send(p1Board);
   message.channel.send(p2Board);
+  */
 
   var fin = 0;
   while (fin == 0) {
