@@ -15,6 +15,7 @@ module.exports.run = async (Bot, message, args, prefix) => {
   console.log("works");
   console.log(fUser);
   console.log(fChannel);
+  fChannel.send("test");
   var p1Board = new Discord.RichEmbed() //player1 embed
   .setTitle(`${message.author} vs ${fUser}`)
   .setColor(`#ef452b`)
