@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (Bot, message, args, prefix) => {
-  //var fChannel = message.guild.channels.find(channel => channel.id == message.channel.id);
+  //var message.channel = message.guild.channels.find(channel => channel.id == message.channel.id);
   var fUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-  if(! fUser) return fChannel.send("Can't find that user");
+  if(! fUser) return message.channel.send("Can't find that user");
   var fTurnRand = Math.floor(Math.random() * 1);
   var p1Icon = message.author.displayAvatarURL
   var p2Icon = fUser.displayAvatarURL
@@ -14,7 +14,7 @@ module.exports.run = async (Bot, message, args, prefix) => {
   //stats board
   console.log("works");
   console.log(fUser);
-  //console.log(fChannel);
+  //console.log(message.channel);
   message.channel.send("test");
   var p1Board = new Discord.RichEmbed() //player1 embed
   .setTitle(`${message.author} vs ${fUser}`)
@@ -26,8 +26,8 @@ module.exports.run = async (Bot, message, args, prefix) => {
   .setColor(`#ef452b`)
   .setThumbnail(p2Icon)
   .addField(`${fUser}`, p2DiStat);
-  fChannel.send(p1Board);
-  fChannel.send(p2Board);
+  message.channel.send(p1Board);
+  message.channel.send(p2Board);
 
   var fin = 0;
   while (fin == 0) {
