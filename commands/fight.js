@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (Bot, message, args, prefix) => {
-  var fChannel = message.guild.channels.find(channel => channel.id == message.channel.id);
+  //var fChannel = message.guild.channels.find(channel => channel.id == message.channel.id);
   var fUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
   if(! fUser) return fChannel.send("Can't find that user");
   var fTurnRand = Math.floor(Math.random() * 1);
@@ -14,7 +14,7 @@ module.exports.run = async (Bot, message, args, prefix) => {
   //stats board
   console.log("works");
   console.log(fUser);
-  console.log(fChannel);
+  //console.log(fChannel);
   message.channel.send("test");
   var p1Board = new Discord.RichEmbed() //player1 embed
   .setTitle(`${message.author} vs ${fUser}`)
